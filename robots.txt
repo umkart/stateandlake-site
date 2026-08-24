@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# EDIT ME: update to the live domain once the custom domain is connected.
+Sitemap: https://stateandlakeadvisors.com/sitemap.xml
