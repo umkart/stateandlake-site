@@ -26,7 +26,7 @@
   header { position: sticky; top: 0; z-index: 100; background: #fff; border-bottom: 1px solid var(--border); }
   nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; max-width: 1120px; margin: 0 auto; position: relative; }
 
-  .logo-wrap { line-height: 1.2; }
+  .logo-wrap { line-height: 1.2; text-decoration: none; color: inherit; display: block; cursor: pointer; }
   .logo {
     font-family: 'Georgia', 'Times New Roman', serif;
     font-weight: 700;
@@ -232,11 +232,11 @@
 
 <header>
   <nav>
-    <div class="logo-wrap">
+    <a href="index.html" class="logo-wrap" aria-label="State and Lake, LLC home">
       <div class="logo">State <span class="amp-symbol">&amp;</span> Lake<span class="logo-llc">LLC</span></div>
       <div class="logo-rule"></div>
       <div class="logo-tagline">Accounting and Reporting Advisory</div>
-    </div>
+    </a>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
