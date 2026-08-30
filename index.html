@@ -5,228 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>State &amp; Lake, LLC | Accounting and Reporting Advisory</title>
 <meta name="description" content="Technical accounting positions that stand up to auditors, regulators, and filing deadlines. Direct support from a CPA-led practice with Big 4 and public company reporting experience.">
-<style>
-  :root {
-    --navy: #0b1f3a;
-    --navy-light: #16335a;
-    --rust: #b3502c;
-    --rust-dark: #97401f;
-    --gray-bg: #f7f8fa;
-    --text: #263140;
-    --muted: #5b6b7d;
-    --border: #e2e6eb;
-    --alert: #8a3a2b;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Georgia','Times New Roman',serif; color: var(--text); line-height: 1.65; background: #fff; }
-  h1,h2,h3,h4 { font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 600; color: var(--navy); }
-  a { text-decoration: none; color: var(--rust); }
-  .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
-
-  header { position: sticky; top: 0; z-index: 100; background: #fff; border-bottom: 1px solid var(--border); }
-  nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; max-width: 1120px; margin: 0 auto; position: relative; }
-
-  .logo-wrap { line-height: 1.2; text-decoration: none; color: inherit; display: block; cursor: pointer; }
-  .logo {
-    font-family: 'Georgia', 'Times New Roman', serif;
-    font-weight: 700;
-    font-size: 1.42rem;
-    color: var(--navy);
-    letter-spacing: 0.3px;
-    display: flex;
-    align-items: baseline;
-    gap: 6px;
-  }
-  .logo .amp-symbol {
-    color: var(--rust);
-    font-style: italic;
-    font-weight: 400;
-    font-size: 1.2em;
-    line-height: 1;
-  }
-  .logo-llc {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-size: 0.62rem;
-    color: var(--muted);
-    letter-spacing: 0.5px;
-    font-weight: 600;
-    margin-left: 3px;
-    align-self: flex-start;
-    margin-top: 3px;
-  }
-  .logo-rule { width: 40px; height: 2px; background: var(--rust); margin: 7px 0 5px; }
-  .logo-tagline {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-size: 0.66rem;
-    color: var(--muted);
-    letter-spacing: 1.4px;
-    text-transform: uppercase;
-    font-weight: 600;
-  }
-
-  .nav-links { display: flex; gap: 28px; list-style: none; }
-  .nav-links a { font-family: 'Helvetica Neue', Arial, sans-serif; color: var(--text); font-size: 0.9rem; font-weight: 500; }
-  .nav-links a:hover { color: var(--rust); }
-
-  .nav-toggle {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    gap: 5px;
-    width: 32px;
-    height: 32px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-  }
-  .nav-toggle span {
-    display: block;
-    width: 100%;
-    height: 2px;
-    background: var(--navy);
-    border-radius: 2px;
-    transition: transform 0.2s ease, opacity 0.2s ease;
-  }
-  .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-  .nav-toggle.open span:nth-child(2) { opacity: 0; }
-  .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-  .hero { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); color:#fff; padding: 100px 24px 90px; }
-  .hero-inner { max-width: 1120px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 0; align-items: center; }
-  .hero-eyebrow { font-family:'Helvetica Neue',Arial,sans-serif; color: var(--rust); background:#fff; display:inline-block; padding:3px 10px; border-radius:3px; font-size:0.8rem; letter-spacing:1.5px; text-transform:uppercase; font-weight:700; margin-bottom:18px; }
-  .hero h1 { color:#fff; font-size: 2.6rem; line-height:1.25; margin-bottom:18px; font-weight:700; max-width: 900px; }
-  .hero .sub { font-family:'Helvetica Neue',Arial,sans-serif; font-size:1.08rem; color:#d7dee8; max-width:760px; margin-bottom:16px; }
-  .hero .edge-line { font-family:'Helvetica Neue',Arial,sans-serif; font-size:1rem; color:#f0c9b8; max-width:760px; margin-bottom:28px; font-weight:600; border-left:3px solid var(--rust); padding-left:14px; }
-  .hero-buttons { display:flex; gap:16px; flex-wrap: wrap; }
-  .btn-primary { font-family:'Helvetica Neue',Arial,sans-serif; background: var(--rust); color:#fff; padding:14px 26px; border-radius:4px; font-weight:600; font-size:0.94rem; display:inline-block; }
-  .btn-primary:hover { background: var(--rust-dark); }
-  .btn-secondary { font-family:'Helvetica Neue',Arial,sans-serif; border:1px solid #6d7f97; color:#fff; padding:14px 26px; border-radius:4px; font-weight:600; font-size:0.94rem; display:inline-block; }
-  .btn-secondary:hover { border-color:#fff; }
-
-  /* Photo bands */
-  .photo-band { width:100%; height:320px; overflow:hidden; position:relative; background: var(--navy); }
-  .photo-band img { width:100%; height:100%; object-fit:cover; display:block; }
-  .photo-overlay { position:absolute; inset:0; background: linear-gradient(180deg, rgba(11,31,58,0.05) 0%, rgba(11,31,58,0.35) 100%); }
-  @media (max-width: 700px) { .photo-band { height: 220px; } }
-
-  section { padding: 78px 24px; }
-  .section-header { text-align:center; max-width:720px; margin:0 auto 52px; }
-  .eyebrow { font-family:'Helvetica Neue',Arial,sans-serif; color: var(--rust); font-size:0.8rem; letter-spacing:2px; text-transform:uppercase; font-weight:700; margin-bottom:12px; }
-  .section-header h2 { font-size:1.9rem; margin-bottom:14px; }
-  .section-header p { font-family:'Helvetica Neue',Arial,sans-serif; color: var(--muted); font-size:1rem; }
-
-  .disclosure-bar { background: var(--navy-light); padding: 16px 24px; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 3px solid var(--rust); }
-  .disclosure-inner { max-width:1120px; margin:0 auto; text-align:center; font-family:'Helvetica Neue',Arial,sans-serif; font-size:0.88rem; color:#e4e9f0; font-weight:500; }
-  .disclosure-inner strong { color: #e8a583; }
-
-  .trust-bar { background: var(--navy); padding: 22px 24px; }
-  .trust-inner { max-width:1120px; margin:0 auto; display:flex; flex-wrap:wrap; gap:18px 40px; justify-content:center; align-items:center; }
-  .trust-item { font-family:'Helvetica Neue',Arial,sans-serif; color:#dbe3ee; font-size:0.85rem; display:flex; align-items:center; gap:8px; }
-  .trust-item:before { content:"\2713"; color: var(--rust); font-weight:700; }
-
-  .pillar-grid { display:grid; grid-template-columns: repeat(2,1fr); gap:28px; max-width:1120px; margin:0 auto; }
-  .pillar-card { border:1px solid var(--border); border-radius:8px; padding:32px 30px; background:#fff; border-top:4px solid var(--rust); }
-  .pillar-head { display:flex; align-items:baseline; gap:10px; margin-bottom:6px; flex-wrap:wrap; }
-  .pillar-num { font-family:'Helvetica Neue',Arial,sans-serif; color: var(--rust); font-weight:700; font-size:0.85rem; }
-  .pillar-card h3 { font-size:1.18rem; margin-bottom:0; }
-  .pillar-sub { font-family:'Helvetica Neue',Arial,sans-serif; color: var(--muted); font-size:0.9rem; margin-bottom:18px; }
-  .pillar-list { list-style:none; }
-  .pillar-list li { font-family:'Helvetica Neue',Arial,sans-serif; font-size:0.9rem; padding:8px 0 8px 20px; position:relative; color:var(--text); border-bottom:1px solid var(--border); }
-  .pillar-list li:last-child { border-bottom:none; padding-bottom:0; }
-  .pillar-list li:before { content:"\2022"; color: var(--rust); position:absolute; left:0; font-weight:700; }
-
-  .situations { background: var(--gray-bg); }
-  .disclaimer { font-family:'Helvetica Neue',Arial,sans-serif; font-size:0.8rem; color: var(--muted); text-align:center; max-width:700px; margin:0 auto 40px; font-style: italic; }
-  .situation-grid { display:grid; grid-template-columns: repeat(3,1fr); gap:24px; max-width:1120px; margin:0 auto; }
-  .situation-card { background:#fff; border:1px solid var(--border); border-radius:8px; padding:28px 24px; border-top:4px solid var(--rust); }
-  .situation-card h4 { font-size:1rem; margin-bottom:14px; }
-  .situation-row { font-family:'Helvetica Neue',Arial,sans-serif; font-size:0.88rem; margin-bottom:10px; }
-  .situation-row strong { display:block; color: var(--navy); font-size:0.72rem; text-transform:uppercase; letter-spacing:1px; margin-bottom:3px; }
-  .situation-row.risk strong { color: var(--alert); }
-  .situation-row p { color: var(--muted); margin:0; }
-
-  .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:56px; max-width:1120px; margin:0 auto; align-items:start; }
-  .about h2 { font-size:1.9rem; margin-bottom:18px; }
-  .about p { font-family:'Helvetica Neue',Arial,sans-serif; color: var(--muted); margin-bottom:16px; font-size:1rem; }
-  .anchor-line { font-family:'Helvetica Neue',Arial,sans-serif; background: var(--gray-bg); border-left:3px solid var(--navy); padding:14px 18px; font-size:0.94rem; color: var(--navy); font-weight:600; margin-bottom:20px; border-radius:0 4px 4px 0; }
-  .about-stat-row { display:flex; gap:16px; flex-wrap:wrap; margin-bottom:24px; }
-  .about-stat { flex:1 1 150px; background: var(--gray-bg); border-left:3px solid var(--rust); border-radius:0 6px 6px 0; padding:14px 16px; }
-  .about-stat-num { font-family:'Helvetica Neue',Arial,sans-serif; font-weight:700; color: var(--navy); font-size:1.1rem; }
-  .about-stat-label { font-family:'Helvetica Neue',Arial,sans-serif; font-size:0.76rem; color: var(--muted); margin-top:4px; }
-  .credential-list { list-style:none; margin-top:16px; }
-  .credential-list li { font-family:'Helvetica Neue',Arial,sans-serif; padding:10px 0 10px 28px; position:relative; color:var(--text); font-size:0.94rem; border-bottom:1px solid var(--border); }
-  .credential-list li:before { content:"\2713"; position:absolute; left:0; color: var(--rust); font-weight:700; }
-  .compare-table { width:100%; border-collapse:collapse; font-family:'Helvetica Neue',Arial,sans-serif; font-size:0.9rem; background:#fff; border-radius:8px; overflow:hidden; box-shadow:0 4px 16px rgba(15,36,64,0.06); }
-  .compare-table th, .compare-table td { padding:14px 16px; text-align:left; border-bottom:1px solid var(--border); }
-  .compare-table th { background: var(--navy); color:#fff; font-weight:600; }
-  .compare-table tr:last-child td { border-bottom:none; }
-  .compare-table td:first-child { font-weight:600; color: var(--navy); }
-  .rate-note { font-family:'Helvetica Neue',Arial,sans-serif; font-size:0.82rem; color: var(--muted); margin-top:14px; font-style: italic; line-height:1.5; }
-
-  .process-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; max-width:1120px; margin:0 auto; }
-  .process-step { text-align:center; padding:0 12px; }
-  .process-num { width:46px; height:46px; border-radius:50%; background: var(--navy); color: var(--rust); display:flex; align-items:center; justify-content:center; font-weight:700; font-size:1.05rem; margin:0 auto 16px; font-family:'Helvetica Neue',Arial,sans-serif; border: 2px solid var(--rust); }
-  .process-step h4 { font-size:0.98rem; margin-bottom:8px; }
-  .process-step p { font-family:'Helvetica Neue',Arial,sans-serif; color: var(--muted); font-size:0.86rem; }
-
-  .insights-grid { display:grid; grid-template-columns: repeat(3,1fr); gap:24px; max-width:1120px; margin:0 auto; }
-  .insight-card { background:#fff; border:1px solid var(--border); border-radius:8px; padding:26px 24px; border-top:4px solid var(--navy); }
-  .insight-tag { font-family:'Helvetica Neue',Arial,sans-serif; font-size:0.7rem; letter-spacing:1px; text-transform:uppercase; color: var(--rust); font-weight:700; margin-bottom:10px; display:block; }
-  .insight-card h4 { font-size:1rem; margin-bottom:10px; }
-  .insight-card p { font-family:'Helvetica Neue',Arial,sans-serif; color: var(--muted); font-size:0.88rem; margin-bottom:14px; }
-  .insight-card a { font-family:'Helvetica Neue',Arial,sans-serif; font-size:0.85rem; font-weight:600; }
-
-  .cta-band { background: var(--navy); color:#fff; text-align:center; padding:68px 24px; border-top:4px solid var(--rust); border-bottom:4px solid var(--rust); }
-  .cta-band h2 { color:#fff; font-size:1.7rem; margin-bottom:16px; }
-  .cta-band p { font-family:'Helvetica Neue',Arial,sans-serif; color:#c3cddb; margin-bottom:28px; max-width:560px; margin-left:auto; margin-right:auto; }
-  .cta-band .hero-buttons { justify-content:center; }
-
-  .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:56px; max-width:1120px; margin:0 auto; }
-  .contact-info h3 { font-size:1.25rem; margin-bottom:14px; }
-  .contact-info p { font-family:'Helvetica Neue',Arial,sans-serif; color: var(--muted); margin-bottom:22px; }
-  .contact-detail { font-family:'Helvetica Neue',Arial,sans-serif; margin-bottom:14px; font-size:0.94rem; }
-  .contact-detail strong { color: var(--navy); display:block; font-size:0.78rem; text-transform:uppercase; letter-spacing:1px; margin-bottom:4px; }
-  .confidentiality-note { background: var(--gray-bg); border-left:3px solid var(--rust); padding:14px 18px; font-family:'Helvetica Neue',Arial,sans-serif; font-size:0.86rem; color: var(--muted); margin-top:20px; border-radius:0 4px 4px 0; }
-  form { display:flex; flex-direction:column; gap:16px; font-family:'Helvetica Neue',Arial,sans-serif; }
-  input, select, textarea { padding:13px 14px; border:1px solid var(--border); border-radius:4px; font-size:0.95rem; font-family:inherit; }
-  input:focus, select:focus, textarea:focus { outline:2px solid var(--rust); border-color: var(--rust); }
-  textarea { min-height:110px; resize:vertical; }
-  .form-submit { background: var(--rust); color:#fff; border:none; padding:14px; border-radius:4px; font-weight:600; font-size:0.95rem; cursor:pointer; margin-top:4px; }
-  .form-submit:hover { background: var(--rust-dark); }
-  .form-note { font-size:0.78rem; color: var(--muted); text-align:center; }
-
-  footer { background:#081527; color:#8a9bb2; text-align:center; padding:40px 24px; font-family:'Helvetica Neue',Arial,sans-serif; font-size:0.85rem; border-top:3px solid var(--rust); }
-  footer a { color:#b8c5d6; }
-  .footer-tagline { color:#b8c5d6; font-size:0.92rem; margin-bottom:14px; font-weight:500; }
-
-  @media (max-width: 900px) {
-    .about-grid, .contact-grid { grid-template-columns:1fr; }
-    .pillar-grid, .situation-grid, .insights-grid { grid-template-columns:1fr; }
-    .process-grid { grid-template-columns:1fr 1fr; }
-    .hero h1 { font-size:1.9rem; }
-
-    .nav-toggle { display: flex; }
-    .nav-links {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      background: #fff;
-      flex-direction: column;
-      gap: 0;
-      border-bottom: 1px solid var(--border);
-      box-shadow: 0 8px 16px rgba(15,36,64,0.08);
-    }
-    .nav-links.open { display: flex; }
-    .nav-links li { border-top: 1px solid var(--border); }
-    .nav-links a { display: block; padding: 14px 24px; }
-  }
-  @media (max-width: 600px) {
-    .process-grid, .situation-grid { grid-template-columns:1fr; }
-  }
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -241,26 +20,24 @@
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#services">Services</a></li>
-      <li><a href="#situations">Case Studies</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#insights">Insights</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="case-studies.html">Case Studies</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="insights.html">Insights</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 </header>
 
 <section class="hero">
   <div class="hero-inner">
-    <div>
-      <div class="hero-eyebrow">Technical Accounting &amp; SEC Reporting Advisory</div>
-      <h1>Technical accounting positions that stand up to auditors, regulators, and filing deadlines.</h1>
-      <p class="sub">Direct support for finance teams facing complex GAAP/IFRS decisions, SEC disclosure risk, or audit pressure, with senior-level judgment applied to every engagement.</p>
-      <p class="edge-line">This is not general advisory work. This is where positions get challenged, deadlines are real, and getting it wrong has consequences.</p>
-      <div class="hero-buttons">
-        <a href="#contact" class="btn-primary">Contact Us</a>
-        <a href="#services" class="btn-secondary">View Services</a>
-      </div>
+    <div class="hero-eyebrow">Technical Accounting &amp; SEC Reporting Advisory</div>
+    <h1>Technical accounting positions that stand up to auditors, regulators, and filing deadlines.</h1>
+    <p class="sub">Direct support for finance teams facing complex GAAP/IFRS decisions, SEC disclosure risk, or audit pressure, with senior-level judgment applied to every engagement.</p>
+    <p class="edge-line">This is not general advisory work. This is where positions get challenged, deadlines are real, and getting it wrong has consequences.</p>
+    <div class="hero-buttons">
+      <a href="contact.html" class="btn-primary">Contact Us</a>
+      <a href="services.html" class="btn-secondary">View Services</a>
     </div>
   </div>
 </section>
@@ -282,252 +59,41 @@
   </div>
 </div>
 
-<section id="services">
+<section id="services-preview">
   <div class="section-header">
     <div class="eyebrow">What We Do</div>
     <h2>Four areas of focused expertise</h2>
     <p>Each engagement is scoped to the specific issue at hand, whether it's a single technical position or ongoing fractional support across a single or multiple filing cycles.</p>
   </div>
-  <div class="pillar-grid">
-    <div class="pillar-card">
-      <div class="pillar-head"><span class="pillar-num">01</span><h3>Technical Accounting</h3></div>
-      <p class="pillar-sub">Judgment-intensive GAAP and IFRS positions built to withstand audit and regulatory scrutiny.</p>
-      <ul class="pillar-list">
-        <li>Revenue recognition (ASC 606, gross vs. net)</li>
-        <li>Lease accounting (ASC 842 / IFRS 16)</li>
-        <li>Goodwill and long-lived asset impairment, CGU analysis</li>
-        <li>Business combinations and purchase accounting</li>
-        <li>Consolidations, including VIE, voting interest, and joint venture analysis</li>
-        <li>Stock-based compensation</li>
-        <li>Financial instruments and derivatives</li>
-        <li>Current Expected Credit Losses (CECL) standard adoption and ongoing application</li>
-        <li>Foreign currency translation and cross-border reporting</li>
-        <li>Discontinued operations and held-for-sale accounting</li>
-      </ul>
+  <div class="preview-grid">
+    <div class="preview-card">
+      <span class="pillar-num">01</span>
+      <h3>Technical Accounting</h3>
+      <p>Judgment-intensive GAAP and IFRS positions built to withstand audit and regulatory scrutiny, from revenue recognition and leases to business combinations, consolidations, and impairment.</p>
+      <a href="services.html">Explore technical accounting &rarr;</a>
     </div>
-    <div class="pillar-card">
-      <div class="pillar-head"><span class="pillar-num">02</span><h3>SEC Reporting</h3></div>
-      <p class="pillar-sub">Filing-ready disclosure support across the reporting cycle.</p>
-      <ul class="pillar-list">
-        <li>10-K, 10-Q, and 8-K drafting and technical review</li>
-        <li>Non-GAAP measures and MD&amp;A support</li>
-        <li>Disclosure checklists and filing-readiness review</li>
-        <li>SEC comment letter response support</li>
-        <li>Pro forma financial statements for IPOs, capital raises, debt issuances, and business combinations (Regulation S-X, Article 11)</li>
-        <li>S-1 registration statement preparation and support</li>
-        <li>IPO readiness assessments and roadmap planning</li>
-        <li>Auditor transition and RFP support, including firm selection, logistics, and continuity of financial reporting</li>
-        <li>ESG and climate disclosure readiness, including Disclosure Committee formation and SEC climate rule preparation</li>
-      </ul>
+    <div class="preview-card">
+      <span class="pillar-num">02</span>
+      <h3>SEC Reporting</h3>
+      <p>Filing-ready disclosure support across the reporting cycle, including 10-K and 10-Q review, S-1 preparation, pro forma statements, comment letter response, and auditor transitions.</p>
+      <a href="services.html">Explore SEC reporting &rarr;</a>
     </div>
-    <div class="pillar-card">
-      <div class="pillar-head"><span class="pillar-num">03</span><h3>SOX Compliance</h3></div>
-      <p class="pillar-sub">Controls that hold up under audit and regulatory review.</p>
-      <ul class="pillar-list">
-        <li>Controls design and gap assessment</li>
-        <li>Remediation support</li>
-        <li>SOX 404 compliance readiness</li>
-        <li>Control deficiency severity assessment and aggregation analysis</li>
-        <li>SOX program buildout for newly public companies, including emerging growth companies (EGCs)</li>
-      </ul>
+    <div class="preview-card">
+      <span class="pillar-num">03</span>
+      <h3>SOX Compliance</h3>
+      <p>Controls that hold up under audit and regulatory review, including design and gap assessment, deficiency severity evaluation, and program buildout for newly public companies.</p>
+      <a href="services.html">Explore SOX compliance &rarr;</a>
     </div>
-    <div class="pillar-card">
-      <div class="pillar-head"><span class="pillar-num">04</span><h3>Strategic &amp; Fractional Support</h3></div>
-      <p class="pillar-sub">Direct partnership beyond the technical memo.</p>
-      <ul class="pillar-list">
-        <li>Partnering with FP&amp;A, IR, internal audit, or legal teams on strategic decisions and disclosure optics</li>
-        <li>Fractional or interim technical accounting director support</li>
-        <li>Board and audit committee-facing analysis and presentation support</li>
-        <li>Workshops and training seminars on technical accounting and reporting topics for finance teams</li>
-        <li>Equity compensation plan administration, including executive stock plan platform setup and 10b5-1 trading plan support</li>
-      </ul>
+    <div class="preview-card">
+      <span class="pillar-num">04</span>
+      <h3>Strategic &amp; Fractional Support</h3>
+      <p>Direct partnership beyond the technical memo, including fractional director support, board and audit committee materials, equity plan administration, and finance team training.</p>
+      <a href="services.html">Explore strategic support &rarr;</a>
     </div>
   </div>
 </section>
 
-<section class="situations" id="situations">
-  <div class="section-header">
-    <div class="eyebrow">Case Studies</div>
-    <h2>Case studies across key technical areas</h2>
-    <p>These are composite, anonymized scenarios representative of the type of engagements State &amp; Lake is designed to support.</p>
-  </div>
-  <p class="disclaimer">Details below are illustrative composites reflecting common engagement types. No confidential client information is disclosed.</p>
-  <div class="situation-grid">
-
-    <div class="situation-card">
-      <h4>Revenue Recognition: Principal vs. Agent on Pass-Through Vendor Costs</h4>
-      <div class="situation-row risk"><strong>Risk</strong><p>Recognizing revenue gross when net presentation was appropriate would have overstated reported revenue and distorted a metric investors watched closely ahead of a capital raise</p></div>
-      <div class="situation-row"><strong>Approach</strong><p>Analyzed control indicators under ASC 606, including fulfillment responsibility, pricing discretion, and payment obligation to the third-party vendor irrespective of customer collection, and documented the conclusion against interpretive guidance from multiple national firms</p></div>
-      <div class="situation-row"><strong>Outcome</strong><p>Gross presentation supported and accepted by auditors with no restatement of previously reported revenue</p></div>
-    </div>
-
-    <div class="situation-card">
-      <h4>Consolidations: Thirty-Eight Partially Owned Entities Across Three Consolidation Models</h4>
-      <div class="situation-row risk"><strong>Risk</strong><p>A services operator held minority and equal-share interests in dozens of operating entities with inconsistent governance terms, creating risk that entities were consolidated or deconsolidated incorrectly across the portfolio</p></div>
-      <div class="situation-row"><strong>Approach</strong><p>Built a repeatable seven-step decision framework applied contract by contract, evaluating the business scope exception, variable interest identification, primary beneficiary power and economics tests, the voting interest model, and joint venture criteria, and reconciled the differing thresholds between the VIE and joint venture literature</p></div>
-      <div class="situation-row"><strong>Outcome</strong><p>Consolidation conclusions documented for every entity, with disclosure relief supported quantitatively; no audit adjustments</p></div>
-    </div>
-
-    <div class="situation-card">
-      <h4>Transfers of Financial Assets: Loan Participation True-Sale Analysis</h4>
-      <div class="situation-row risk"><strong>Risk</strong><p>If a bank partnership arrangement failed true-sale treatment, the transaction would have been recharacterized as a secured borrowing, materially changing the balance sheet and revenue presentation for a rapidly scaling product line</p></div>
-      <div class="situation-row"><strong>Approach</strong><p>Tested all four participating-interest characteristics under ASC 860, including proportionate cash flow allocation, priority equivalence, and pledge and exchange rights, then quantified whether the contractual servicing fee exceeded what would fairly compensate a substitute servicer</p></div>
-      <div class="situation-row"><strong>Outcome</strong><p>Sale of a participating interest supported, with a documented framework that scaled as the program grew across additional markets</p></div>
-    </div>
-
-    <div class="situation-card">
-      <h4>Goodwill Impairment: Reporting Unit Cleared by a Narrow Cushion in a Market Shock</h4>
-      <div class="situation-row risk"><strong>Risk</strong><p>A reporting unit that had cleared its prior annual test by a thin margin faced a sharp forecast reduction, putting a material impairment charge and the related disclosure directly in play</p></div>
-      <div class="situation-row"><strong>Approach</strong><p>Built dual forecast scenarios with the CEO and CFO, engaged and evaluated a third-party valuation specialist, weighted the scenarios with documented rationale, and calculated the precise scenario weighting at which an impairment would be triggered</p></div>
-      <div class="situation-row"><strong>Outcome</strong><p>No impairment recorded, with sensitivity disclosed transparently and the conclusion accepted without further inquiry</p></div>
-    </div>
-
-    <div class="situation-card">
-      <h4>Regulated Operations: Market-Based Rates Failing the Regulatory Accounting Criteria</h4>
-      <div class="situation-row risk"><strong>Risk</strong><p>Two large infrastructure expansion projects had been accounted for under regulatory accounting from inception, but the underlying rates were market-based rather than cost-recovery, meaning regulatory treatment and capitalized financing costs were both potentially wrong</p></div>
-      <div class="situation-row"><strong>Approach</strong><p>Applied the cost-recovery criterion to the substance rather than the form of the regulator's rate order, evaluated whether a separable-portion conclusion could be reached without unwinding regulatory treatment across the entire jurisdiction, and quantified the difference between regulated and non-regulated financing cost capitalization</p></div>
-      <div class="situation-row"><strong>Outcome</strong><p>Regulatory accounting appropriately scoped out for the projects, with the quantified difference assessed as immaterial and passed on a documented basis</p></div>
-    </div>
-
-    <div class="situation-card">
-      <h4>Business Combination: Related-Party Acquisition Requiring Control and Acquirer Analysis</h4>
-      <div class="situation-row risk"><strong>Risk</strong><p>The sellers were also among the largest shareholders and board members of the acquirer, and the acquirer had performed the target's accounting pre-close, raising questions about acquirer identification, acquisition date, and whether control had transferred earlier</p></div>
-      <div class="situation-row"><strong>Approach</strong><p>Worked through the full acquisition method, evaluating the business definition screen, control transfer evidence, pre-existing service arrangements at fair value, intangible asset identification and completeness, and measurement period closure</p></div>
-      <div class="situation-row"><strong>Outcome</strong><p>Purchase accounting finalized within the measurement period with no post-close adjustments and no auditor challenge to the related-party analysis</p></div>
-    </div>
-
-    <div class="situation-card">
-      <h4>Restructuring: Workforce Reduction Spanning Three Separate Standards</h4>
-      <div class="situation-row risk"><strong>Risk</strong><p>A multi-state reduction in force combined voluntary programs, union and non-union involuntary separations, and pension curtailment, with each cost category carrying a different recognition trigger and timing</p></div>
-      <div class="situation-row"><strong>Approach</strong><p>Segregated costs across the ongoing benefit arrangement, one-time termination benefit, and pension curtailment frameworks, resolved whether a substantive ongoing arrangement existed for a union population with no formal prior policy, and applied a forfeiture estimate to the accrual</p></div>
-      <div class="situation-row"><strong>Outcome</strong><p>Restructuring charges recognized in the correct periods and categories, with disclosures reconciling the liability rollforward through completion</p></div>
-    </div>
-
-    <div class="situation-card">
-      <h4>Debt: Refinancing Evaluated as Modification Versus Extinguishment</h4>
-      <div class="situation-row risk"><strong>Risk</strong><p>Proceeds from a new senior secured note issuance were used to redeem an existing series held partly by the same investors, and treating the transaction as a modification rather than an extinguishment would have deferred a substantial loss</p></div>
-      <div class="situation-row"><strong>Approach</strong><p>Evaluated whether the redemption and new issuance were negotiated in contemplation of one another, tested the fact pattern against interpretive examples, measured new-investor participation, and documented an accounting policy election applied consistently</p></div>
-      <div class="situation-row"><strong>Outcome</strong><p>Extinguishment accounting supported, with the applicable premium and unamortized financing cost write-off calculated and separately presented</p></div>
-    </div>
-
-    <div class="situation-card">
-      <h4>Credit Facility: Creditor-by-Creditor Modification Analysis on an Amended Agreement</h4>
-      <div class="situation-row risk"><strong>Risk</strong><p>An amended and restated credit agreement changed the lender syndicate composition and individual commitments, and a portfolio-level conclusion would have misstated the deferred cost write-off</p></div>
-      <div class="situation-row"><strong>Approach</strong><p>Performed the cash flow significance test at the individual creditor level for term loan participants and separately analyzed borrowing capacity changes for revolver participants, allocating unamortized costs pro rata for lenders whose capacity declined</p></div>
-      <div class="situation-row"><strong>Outcome</strong><p>Write-off isolated to the exiting lender and one reduced-capacity lender, with remaining costs appropriately deferred over the new term</p></div>
-    </div>
-
-    <div class="situation-card">
-      <h4>Derivatives: Cash Flow Hedge Documentation on an Interest Rate Swap</h4>
-      <div class="situation-row risk"><strong>Risk</strong><p>Failure to establish contemporaneous hedge documentation would have disqualified hedge accounting, forcing fair value changes through earnings and introducing volatility into reported results</p></div>
-      <div class="situation-row"><strong>Approach</strong><p>Confirmed the instrument met the derivative definition, documented the risk management objective and hedged forecasted transactions, assessed counterparty default probability, and addressed the consequences if principal outstanding were to fall below the amortizing notional amount</p></div>
-      <div class="situation-row"><strong>Outcome</strong><p>Hedge accounting supported from inception, with effectiveness testing and disclosure requirements established as a repeatable quarterly process</p></div>
-    </div>
-
-    <div class="situation-card">
-      <h4>Equity Instruments: Warrant and Preferred Stock Classification in a Financing Round</h4>
-      <div class="situation-row risk"><strong>Risk</strong><p>Misclassifying warrants issued alongside preferred stock as liabilities rather than equity would have introduced recurring fair value remeasurement through earnings ahead of a planned public offering</p></div>
-      <div class="situation-row"><strong>Approach</strong><p>Established that the warrants were freestanding by testing legal detachability and separate exercisability, then evaluated liability classification across the mandatorily redeemable, share-repurchase obligation, and variable-share categories before assessing derivative scope exceptions</p></div>
-      <div class="situation-row"><strong>Outcome</strong><p>Equity classification supported for both instruments, documented to the standard the incoming auditors required for public company readiness</p></div>
-    </div>
-
-    <div class="situation-card">
-      <h4>Divestiture: Seller Accounting for an Earn-Out With No Authoritative Guidance</h4>
-      <div class="situation-row risk"><strong>Risk</strong><p>A portion of the sale price was contingent over an extended earn-out period, and U.S. GAAP provides no authoritative seller-side guidance, leaving both the initial gain calculation and cash flow presentation exposed</p></div>
-      <div class="situation-row"><strong>Approach</strong><p>Reconciled competing interpretations from two national firms, elected and documented a fair value policy applied consistently, engaged a valuation specialist to model the earn-out formula with sensitivity across growth and customer-attrition assumptions, and resolved cash flow classification across operating, investing, and financing activities</p></div>
-      <div class="situation-row"><strong>Outcome</strong><p>Gain on sale recorded with a defensible fair value estimate, and a worst-case exposure quantified and confirmed immaterial</p></div>
-    </div>
-
-    <div class="situation-card">
-      <h4>Uncorrected Errors: Restatement Assessment Under Quantitative and Qualitative Tests</h4>
-      <div class="situation-row risk"><strong>Risk</strong><p>Several out-of-period errors were identified mid-year across multiple prior periods, raising the question of whether previously issued financial statements required restatement</p></div>
-      <div class="situation-row"><strong>Approach</strong><p>Quantified the errors under both the rollover and iron curtain approaches against a defined threshold, then evaluated all qualitative factors including whether the errors masked earnings trends, obscured a miss against analyst consensus, affected debt covenant compliance, or influenced management compensation</p></div>
-      <div class="situation-row"><strong>Outcome</strong><p>No restatement required, with the aggregation conclusion documented and coordinated with internal audit on the related control implications</p></div>
-    </div>
-
-    <div class="situation-card">
-      <h4>SOX 404: Control Deficiency Severity and Aggregation Assessment</h4>
-      <div class="situation-row risk"><strong>Risk</strong><p>Multiple control deviations were identified at year-end, several unremediated, creating exposure that individually minor issues could aggregate to a significant deficiency or material weakness in management's assessment</p></div>
-      <div class="situation-row"><strong>Approach</strong><p>Documented each deviation with its root cause, identified specific compensating controls operating effectively during the period, assessed whether any financial statement risk could actually arise given system access architecture, and performed an aggregation analysis across processes and control owners</p></div>
-      <div class="situation-row"><strong>Outcome</strong><p>All deviations concluded as control deficiencies not rising to significant deficiency or material weakness, with process changes implemented to prevent recurrence</p></div>
-    </div>
-
-    <div class="situation-card">
-      <h4>Segment Reporting: Reportable Segments After Two Acquisitions in One Year</h4>
-      <div class="situation-row risk"><strong>Risk</strong><p>Two acquisitions in a single year changed how the chief operating decision maker reviewed results, and an incorrect segment conclusion would have affected goodwill allocation, impairment testing units, and non-GAAP disclosure</p></div>
-      <div class="situation-row"><strong>Approach</strong><p>Reassessed operating segment identification against the CODM's actual reporting package, evaluated aggregation criteria and quantitative thresholds, and addressed the interaction between segment profit measures and non-GAAP presentation rules the SEC actively comments on</p></div>
-      <div class="situation-row"><strong>Outcome</strong><p>Segment structure supported and disclosed consistently with internal reporting, with no SEC comment on the presentation</p></div>
-    </div>
-
-    <div class="situation-card">
-      <h4>Going Concern: Liquidity Assessment Under Sudden Macroeconomic Stress</h4>
-      <div class="situation-row risk"><strong>Risk</strong><p>A sharp demand shock, a steep share price decline, and rising delinquency raised the question of whether substantial doubt existed about the ability to continue as a going concern, with disclosure consequences either way</p></div>
-      <div class="situation-row"><strong>Approach</strong><p>Assessed liquidity sources against obligations coming due within the assessment period, evaluated covenant compliance headroom, incorporated a post-quarter financing facility, and weighed operational continuity factors alongside multiple forecast scenarios</p></div>
-      <div class="situation-row"><strong>Outcome</strong><p>No substantial doubt concluded, with the analysis and monitoring plan reviewed and approved at the CAO and CFO level</p></div>
-    </div>
-
-    <div class="situation-card">
-      <h4>IPO Readiness: Capitalizing Versus Expensing Offering Costs</h4>
-      <div class="situation-row risk"><strong>Risk</strong><p>A private company preparing to file had accumulated costs from underwriters, counsel, auditors, printers, and consultants, and misclassifying organizational costs as deferrable offering costs would have overstated assets and understated expense</p></div>
-      <div class="situation-row"><strong>Approach</strong><p>Applied the specific-incremental-cost criterion invoice by invoice, allocated legal fees between offering and organizational activities with counsel's input, and established balance sheet, cash flow, and pro forma presentation for the deferred balance</p></div>
-      <div class="situation-row"><strong>Outcome</strong><p>Deferred offering costs supported at the filing date with a cost-classification framework the company continued to apply through the registration process</p></div>
-    </div>
-
-    <div class="situation-card">
-      <h4>Equity Method: Other-Than-Temporary Impairment Assessment on a Minority Investment</h4>
-      <div class="situation-row risk"><strong>Risk</strong><p>A significant minority investment carried at a material balance faced a macroeconomic shock, and the investor could not test the investee's underlying assets directly, limiting available evidence for the impairment conclusion</p></div>
-      <div class="situation-row"><strong>Approach</strong><p>Evaluated each impairment indicator against available evidence, including performance relative to original investment expectations, peer and industry comparison, regulatory developments, and customer concentration, working directly with the investee's CFO to validate results reported on a lag</p></div>
-      <div class="situation-row"><strong>Outcome</strong><p>No other-than-temporary impairment recorded, with the indicator-by-indicator analysis and the reporting lag both disclosed and accepted by auditors</p></div>
-    </div>
-
-  </div>
-</section>
-
-<section class="about" id="about">
-  <div class="about-grid">
-    <div>
-      <div class="eyebrow">Why Work With State &amp; Lake</div>
-      <h2>Deep experience, strong technical grounding, and the judgment to apply both in practice.</h2>
-      <div class="anchor-line">State &amp; Lake is built on direct experience within publicly traded company reporting environments, spanning SEC filings, U.S. GAAP, and IFRS compliance. Positions and supporting documentation are built to hold up under the most rigorous audits, giving both companies and audit committees comfort.</div>
-      <div class="about-stat-row">
-        <div class="about-stat">
-          <div class="about-stat-num">25 Years of Experience</div>
-          <div class="about-stat-label">Public company, Pre-IPO, and Big 4</div>
-        </div>
-        <div class="about-stat">
-          <div class="about-stat-num">US GAAP + IFRS</div>
-          <div class="about-stat-label">Cross-border reporting and reconciliation expertise</div>
-        </div>
-        <div class="about-stat">
-          <div class="about-stat-num">Seasoned CPA</div>
-          <div class="about-stat-label">Every engagement delivered directly, no delegation</div>
-        </div>
-      </div>
-      <p>This practice exists for the moments general advisory work doesn't cover: contested audit positions, disclosure decisions made under real deadline pressure, and technical calls that carry restatement or filing-delay risk if they're wrong.</p>
-      <p>Unlike a large advisory firm, every engagement stays with the same senior practitioner from start to finish, not a rotating team of staff and reviewers. That means faster turnaround, consistent institutional knowledge of your business, and pricing that reflects a lean practice rather than Big 4 overhead &mdash; see the rate comparison.</p>
-      <ul class="credential-list">
-        <li>CPA with 25 years of accounting and financial reporting experience, including seven years of Big 4 experience</li>
-        <li>Senior leadership experience at publicly traded companies</li>
-        <li>Cross-border reporting experience spanning US GAAP, SEC rules, and IFRS</li>
-        <li>Direct experience across technical accounting, SEC reporting, SOX compliance, and fractional finance leadership</li>
-        <li>Every engagement delivered directly, with no delegation to junior staff</li>
-      </ul>
-    </div>
-    <div>
-      <table class="compare-table">
-        <tr><th>Consideration</th><th>Big 4 / National Firm</th><th>State &amp; Lake</th></tr>
-        <tr><td>Hourly rate</td><td>$300 - $1,200+/hr</td><td>$175 - $275/hr</td></tr>
-        <tr><td>Team structure</td><td>Rotating staff, managers, partners</td><td>One senior practitioner, direct access</td></tr>
-        <tr><td>Onboarding time</td><td>Weeks, often with SOW negotiation</td><td>Days, lean engagement letter</td></tr>
-        <tr><td>Minimum engagement</td><td>Often large retainers or audits</td><td>Project-based or hourly, scoped to your need</td></tr>
-        <tr><td>Continuity</td><td>Staff turnover between periods</td><td>Same practitioner every engagement</td></tr>
-      </table>
-      <p class="rate-note">This range reflects pricing for most engagements. More complex or extended projects may be scoped outside this range, and will always be confirmed in writing before work begins.</p>
-    </div>
-  </div>
-</section>
-
-<section id="process">
+<section class="gray-section" id="process">
   <div class="section-header">
     <div class="eyebrow">How It Works</div>
     <h2>A simple, low-friction engagement process</h2>
@@ -541,78 +107,13 @@
   </div>
 </section>
 
-<section class="situations" id="insights">
-  <div class="section-header">
-    <div class="eyebrow">Insights</div>
-    <h2>Perspectives on technical accounting and reporting</h2>
-    <p>A curated mix of thought-leadership from major advisory firms alongside independent commentary on how these issues play out in practice.</p>
-  </div>
-  <div class="insights-grid">
-    <div class="insight-card">
-      <span class="insight-tag">Placeholder</span>
-      <h4>Insight title goes here</h4>
-      <p>Brief summary and independent commentary will go here once linked to source content.</p>
-      <a href="#">Read more &rarr;</a>
-    </div>
-    <div class="insight-card">
-      <span class="insight-tag">Placeholder</span>
-      <h4>Insight title goes here</h4>
-      <p>Brief summary and independent commentary will go here once linked to source content.</p>
-      <a href="#">Read more &rarr;</a>
-    </div>
-    <div class="insight-card">
-      <span class="insight-tag">Placeholder</span>
-      <h4>Insight title goes here</h4>
-      <p>Brief summary and independent commentary will go here once linked to source content.</p>
-      <a href="#">Read more &rarr;</a>
-    </div>
-  </div>
-</section>
-
 <div class="cta-band">
   <h2>Contentious positions, tight filing deadlines, and audit disagreements need direct, senior-level support before they escalate.</h2>
   <p>Whether it's a one-time memo or ongoing fractional support during a busy filing period, let's talk before it becomes a bigger problem.</p>
   <div class="hero-buttons">
-    <a href="#contact" class="btn-primary">Contact Us</a>
+    <a href="contact.html" class="btn-primary">Contact Us</a>
   </div>
 </div>
-
-<section id="contact">
-  <div class="section-header">
-    <div class="eyebrow">Get In Touch</div>
-    <h2>Let's discuss your engagement</h2>
-    <p>Tell us a bit about the issue you're facing, and we'll follow up within one business day.</p>
-  </div>
-  <div class="contact-grid">
-    <div class="contact-info">
-      <h3>Contact Details</h3>
-      <p>Reach out directly, or use the form to share details about your engagement so we can prepare before we speak.</p>
-      <div class="contact-detail"><strong>Email</strong>hello@stateandlakeadvisors.com</div>
-      <div class="contact-detail"><strong>Phone</strong>(312) 555-0192</div>
-      <div class="contact-detail"><strong>Location</strong>Chicago, IL &middot; Remote engagements nationwide</div>
-      <div class="contact-detail"><strong>Availability</strong>Project-based and fractional engagements, typically starting within one week</div>
-      <div class="confidentiality-note">Everything shared here is treated as confidential. A mutual NDA is available on request before any details of your situation are discussed in depth.</div>
-    </div>
-    <div>
-      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-        <input type="text" name="name" placeholder="Full name" required>
-        <input type="text" name="company" placeholder="Company name">
-        <input type="email" name="email" placeholder="Email address" required>
-        <select name="topic">
-          <option value="">Area of interest</option>
-          <option value="Technical Accounting">Technical Accounting</option>
-          <option value="SEC Reporting">SEC Reporting</option>
-          <option value="SOX Compliance">SOX Compliance</option>
-          <option value="Strategic and Fractional Support">Strategic &amp; Fractional Support</option>
-          <option value="Other">Other</option>
-        </select>
-        <textarea name="message" placeholder="Briefly describe your engagement or question" required></textarea>
-        <button type="submit" class="form-submit">Send Message</button>
-        <p class="form-note">Submissions are sent securely. Replace the form endpoint above with your own Formspree, HubSpot, or backend handler before publishing.</p>
-      </form>
-    </div>
-  </div>
-</section>
 
 <div class="photo-band">
   <img src="assets/L%20Train.jpg" alt="CTA L train on elevated tracks in downtown Chicago">
@@ -621,25 +122,16 @@
 
 <footer>
   <p class="footer-tagline">A boutique accounting and reporting advisory practice serving public and growth-stage companies</p>
+  <p class="footer-nav">
+    <a href="services.html">Services</a> &middot;
+    <a href="case-studies.html">Case Studies</a> &middot;
+    <a href="about.html">About</a> &middot;
+    <a href="insights.html">Insights</a> &middot;
+    <a href="contact.html">Contact</a>
+  </p>
   <p>&copy; 2026 State &amp; Lake, LLC. All rights reserved. &nbsp;|&nbsp; <a href="privacy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="terms.html">Terms of Engagement</a></p>
 </footer>
 
-<script>
-  const navToggle = document.getElementById('navToggle');
-  const navLinks = document.getElementById('navLinks');
-  navToggle.addEventListener('click', function () {
-    const isOpen = navLinks.classList.toggle('open');
-    navToggle.classList.toggle('open', isOpen);
-    navToggle.setAttribute('aria-expanded', isOpen);
-  });
-  navLinks.querySelectorAll('a').forEach(function (link) {
-    link.addEventListener('click', function () {
-      navLinks.classList.remove('open');
-      navToggle.classList.remove('open');
-      navToggle.setAttribute('aria-expanded', 'false');
-    });
-  });
-</script>
-
+<script src="nav.js"></script>
 </body>
 </html>
