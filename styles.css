@@ -1,6 +1,6 @@
 /* ============================================
    State & Lake, LLC — Shared Stylesheet
-   REVISED: full-width banner photo bands
+   REVISED: taller banner, top-weighted crop
    ============================================ */
 
 :root {
@@ -243,13 +243,14 @@ nav {
 }
 
 /* ---------- Photo bands (full-width banner) ---------- */
-/* Image fills the entire band width. Band height is kept short so
-   only a modest amount of the image is trimmed. object-position
-   shifts the visible window downward to keep the subject in frame. */
+/* Taller band (380px) reduces how much of the image is trimmed.
+   object-position 30% pulls the visible window UPWARD so the top of
+   the image is preserved. Lower the % to show more top, raise it to
+   show more bottom. */
 
 .photo-band {
   width: 100%;
-  height: 320px;
+  height: 380px;
   background: var(--navy);
   position: relative;
   overflow: hidden;
@@ -260,7 +261,7 @@ nav {
   height: 100%;
   display: block;
   object-fit: cover;
-  object-position: center 58%;
+  object-position: center 30%;
 }
 
 .photo-overlay {
@@ -791,7 +792,7 @@ footer a { color: #b8c5d6; }
   .process-grid { grid-template-columns: 1fr 1fr; }
   .hero h1 { font-size: 1.9rem; }
   .page-header h1 { font-size: 1.65rem; }
-  .photo-band { height: 240px; }
+  .photo-band { height: 260px; }
 
   .nav-toggle { display: flex; }
 
@@ -816,7 +817,7 @@ footer a { color: #b8c5d6; }
 
 @media (max-width: 600px) {
   .process-grid { grid-template-columns: 1fr; }
-  .photo-band { height: 190px; }
+  .photo-band { height: 200px; }
   .acc summary { font-size: 0.96rem; padding: 16px 46px 16px 18px; }
   .acc-body { padding-left: 18px; padding-right: 18px; }
 }
