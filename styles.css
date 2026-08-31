@@ -685,6 +685,15 @@ section { padding: 78px 24px; }
 
 /* ---------- CTA band ---------- */
 
+/* ---------- Closing action (button on white) ---------- */
+
+.closing-action {
+  background: #fff;
+  text-align: center;
+  padding: 52px 24px 68px;
+  border-top: 1px solid var(--border);
+}
+
 .cta-band {
   background: var(--navy);
   color: #fff;
