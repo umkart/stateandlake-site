@@ -1,6 +1,7 @@
 /* ============================================
    State & Lake, LLC — Shared Stylesheet
-   REVISED: taller banner, top-weighted crop
+   BANNER FIX: reverted bad 30% crop, added
+   independent per-band object-position classes
    ============================================ */
 
 :root {
@@ -242,15 +243,27 @@ nav {
   max-width: 780px;
 }
 
-/* ---------- Photo bands (full-width banner) ---------- */
-/* Taller band (380px) reduces how much of the image is trimmed.
-   object-position 30% pulls the visible window UPWARD so the top of
-   the image is preserved. Lower the % to show more top, raise it to
-   show more bottom. */
+/* ============================================
+   PHOTO BANDS — full-width banner
+   --------------------------------------------
+   HOW TO TUNE THE CROP:
+   object-position: center <PERCENT>;
+
+   LOWER percent  = show more of the image TOP
+   HIGHER percent = show more of the image BOTTOM
+
+   Both the Bean and the L train sit LOW in their
+   source photos, so both need HIGHER percentages.
+   The previous 30% value pushed the window up into
+   the sky and cropped the subjects out of frame.
+
+   Each band now has its own class so the two
+   images can be tuned independently.
+   ============================================ */
 
 .photo-band {
   width: 100%;
-  height: 380px;
+  height: 420px;
   background: var(--navy);
   position: relative;
   overflow: hidden;
@@ -261,8 +274,14 @@ nav {
   height: 100%;
   display: block;
   object-fit: cover;
-  object-position: center 30%;
+  object-position: center 55%;   /* neutral default */
 }
+
+/* Cloud Gate / the Bean — subject sits low in frame */
+.photo-band--bean img { object-position: center 62%; }
+
+/* L train / elevated tracks — subject sits low-center */
+.photo-band--train img { object-position: center 58%; }
 
 .photo-overlay {
   position: absolute;
@@ -792,7 +811,7 @@ footer a { color: #b8c5d6; }
   .process-grid { grid-template-columns: 1fr 1fr; }
   .hero h1 { font-size: 1.9rem; }
   .page-header h1 { font-size: 1.65rem; }
-  .photo-band { height: 260px; }
+  .photo-band { height: 300px; }
 
   .nav-toggle { display: flex; }
 
@@ -817,7 +836,7 @@ footer a { color: #b8c5d6; }
 
 @media (max-width: 600px) {
   .process-grid { grid-template-columns: 1fr; }
-  .photo-band { height: 200px; }
+  .photo-band { height: 230px; }
   .acc summary { font-size: 0.96rem; padding: 16px 46px 16px 18px; }
   .acc-body { padding-left: 18px; padding-right: 18px; }
 }
