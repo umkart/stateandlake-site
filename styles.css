@@ -1,7 +1,7 @@
 /* ============================================
    State & Lake, LLC — Shared Stylesheet
-   BANNER FIX: reverted bad 30% crop, added
-   independent per-band object-position classes
+   ADDS: subtle "Q" watermark on all navy
+   header bands (hero + interior page headers)
    ============================================ */
 
 :root {
@@ -143,9 +143,11 @@ nav {
   background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
   color: #fff;
   padding: 100px 24px 90px;
+  position: relative;
+  overflow: hidden;
 }
 
-.hero-inner { max-width: 1120px; margin: 0 auto; }
+.hero-inner { max-width: 1120px; margin: 0 auto; position: relative; z-index: 2; }
 
 .hero-eyebrow {
   font-family: 'Helvetica Neue',Arial,sans-serif;
@@ -222,9 +224,11 @@ nav {
   color: #fff;
   padding: 64px 24px 58px;
   border-bottom: 4px solid var(--rust);
+  position: relative;
+  overflow: hidden;
 }
 
-.page-header-inner { max-width: 1120px; margin: 0 auto; }
+.page-header-inner { max-width: 1120px; margin: 0 auto; position: relative; z-index: 2; }
 
 .page-header .eyebrow { color: #e8a583; }
 
@@ -244,6 +248,40 @@ nav {
 }
 
 /* ============================================
+   Q WATERMARK
+   --------------------------------------------
+   A single oversized "Q" ghosted into the navy
+   header band on every page. Cropped off the
+   right edge so it reads as form, not a letter.
+
+   TO MAKE IT MORE VISIBLE: raise opacity toward
+   0.055. Do not exceed 0.07 or it starts
+   competing with the headline text.
+
+   TO MAKE IT FAINTER: lower toward 0.03.
+
+   TO MOVE IT: adjust `right` (more negative =
+   further off the edge) or `top`.
+   ============================================ */
+
+.hero::after,
+.page-header::after {
+  content: "Q";
+  position: absolute;
+  right: -0.08em;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 26rem;
+  line-height: 0.78;
+  color: #fff;
+  opacity: 0.045;
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ============================================
    PHOTO BANDS — full-width banner
    --------------------------------------------
    HOW TO TUNE THE CROP:
@@ -251,14 +289,6 @@ nav {
 
    LOWER percent  = show more of the image TOP
    HIGHER percent = show more of the image BOTTOM
-
-   Both the Bean and the L train sit LOW in their
-   source photos, so both need HIGHER percentages.
-   The previous 30% value pushed the window up into
-   the sky and cropped the subjects out of frame.
-
-   Each band now has its own class so the two
-   images can be tuned independently.
    ============================================ */
 
 .photo-band {
@@ -683,8 +713,6 @@ section { padding: 78px 24px; }
 
 .insight-card a { font-family: 'Helvetica Neue',Arial,sans-serif; font-size: 0.85rem; font-weight: 600; }
 
-/* ---------- CTA band ---------- */
-
 /* ---------- Closing action (button on white) ---------- */
 
 .closing-action {
@@ -693,6 +721,8 @@ section { padding: 78px 24px; }
   padding: 52px 24px 68px;
   border-top: 1px solid var(--border);
 }
+
+/* ---------- CTA band (home page only) ---------- */
 
 .cta-band {
   background: var(--navy);
@@ -822,6 +852,9 @@ footer a { color: #b8c5d6; }
   .page-header h1 { font-size: 1.65rem; }
   .photo-band { height: 300px; }
 
+  .hero::after,
+  .page-header::after { font-size: 15rem; }
+
   .nav-toggle { display: flex; }
 
   .nav-links {
@@ -846,6 +879,10 @@ footer a { color: #b8c5d6; }
 @media (max-width: 600px) {
   .process-grid { grid-template-columns: 1fr; }
   .photo-band { height: 230px; }
+
+  .hero::after,
+  .page-header::after { font-size: 10rem; opacity: 0.04; }
+
   .acc summary { font-size: 0.96rem; padding: 16px 46px 16px 18px; }
   .acc-body { padding-left: 18px; padding-right: 18px; }
 }
