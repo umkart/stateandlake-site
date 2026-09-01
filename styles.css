@@ -1,7 +1,7 @@
 /* ============================================
    State & Lake, LLC — Shared Stylesheet
-   ADDS: subtle "Q" watermark on all navy
-   header bands (hero + interior page headers)
+   Q WATERMARK v2: separate sizes for hero vs.
+   interior page headers so the tail always fits
    ============================================ */
 
 :root {
@@ -250,35 +250,44 @@ nav {
 /* ============================================
    Q WATERMARK
    --------------------------------------------
-   A single oversized "Q" ghosted into the navy
-   header band on every page. Cropped off the
-   right edge so it reads as form, not a letter.
+   The Q's tail hangs below the bowl. If the
+   glyph is too large for its band, the tail is
+   cropped and the letter reads as an "O".
 
-   TO MAKE IT MORE VISIBLE: raise opacity toward
-   0.055. Do not exceed 0.07 or it starts
-   competing with the headline text.
+   The hero band is tall (~400px) so it carries
+   a large Q. Interior page headers are short
+   (~190px) so they need a much smaller one.
 
-   TO MAKE IT FAINTER: lower toward 0.03.
-
-   TO MOVE IT: adjust `right` (more negative =
-   further off the edge) or `top`.
+   TO ADJUST VISIBILITY: change opacity.
+     Hero max 0.07, page header max 0.08.
+   TO ADJUST SIZE: change font-size. If the tail
+     ever clips on an interior page, lower
+     .page-header::after toward 7rem.
    ============================================ */
 
 .hero::after,
 .page-header::after {
   content: "Q";
   position: absolute;
-  right: -0.08em;
+  right: 0.04em;
   top: 50%;
   transform: translateY(-50%);
   font-family: 'Georgia', 'Times New Roman', serif;
-  font-size: 26rem;
   line-height: 0.78;
   color: #fff;
-  opacity: 0.045;
   z-index: 1;
   pointer-events: none;
   user-select: none;
+}
+
+.hero::after {
+  font-size: 19rem;
+  opacity: 0.05;
+}
+
+.page-header::after {
+  font-size: 8.5rem;
+  opacity: 0.06;
 }
 
 /* ============================================
@@ -852,8 +861,8 @@ footer a { color: #b8c5d6; }
   .page-header h1 { font-size: 1.65rem; }
   .photo-band { height: 300px; }
 
-  .hero::after,
-  .page-header::after { font-size: 15rem; }
+  .hero::after { font-size: 12rem; }
+  .page-header::after { font-size: 7rem; }
 
   .nav-toggle { display: flex; }
 
@@ -880,8 +889,8 @@ footer a { color: #b8c5d6; }
   .process-grid { grid-template-columns: 1fr; }
   .photo-band { height: 230px; }
 
-  .hero::after,
-  .page-header::after { font-size: 10rem; opacity: 0.04; }
+  .hero::after { font-size: 8rem; opacity: 0.045; }
+  .page-header::after { font-size: 5.5rem; opacity: 0.05; }
 
   .acc summary { font-size: 0.96rem; padding: 16px 46px 16px 18px; }
   .acc-body { padding-left: 18px; padding-right: 18px; }
