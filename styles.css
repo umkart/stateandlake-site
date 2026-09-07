@@ -1,8 +1,8 @@
 /* ============================================
    State & Lake, LLC — Shared Stylesheet
-   FIXES: ampersand restored to rust (was white
-   and invisible on the nav) and process circle
-   numerals changed to white
+   ADDS: .cs-group styles for the Case Studies
+   page, which now groups examples under the
+   four service pillars
    ============================================ */
 
 :root {
@@ -501,6 +501,52 @@ section { padding: 78px 24px; }
   font-style: italic;
 }
 
+/* ============================================
+   CASE STUDY PILLAR GROUPS
+   --------------------------------------------
+   Used on case-studies.html to group examples
+   under the four service pillars. Each group
+   is a visible header followed by its own
+   .accordion of individual case studies.
+   ============================================ */
+
+.cs-group { max-width: 900px; margin: 0 auto 56px; }
+
+.cs-group:last-of-type { margin-bottom: 0; }
+
+.cs-group-head {
+  border-bottom: 2px solid var(--navy);
+  padding-bottom: 12px;
+  margin-bottom: 22px;
+}
+
+.cs-group-num {
+  font-family: 'Helvetica Neue',Arial,sans-serif;
+  color: var(--rust);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.cs-group-title { font-size: 1.35rem; margin-bottom: 6px; }
+
+.cs-group-sub {
+  font-family: 'Helvetica Neue',Arial,sans-serif;
+  font-size: 0.9rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.cs-group-empty {
+  font-family: 'Helvetica Neue',Arial,sans-serif;
+  font-size: 0.9rem;
+  color: var(--muted);
+  font-style: italic;
+  padding: 8px 0;
+}
+
 /* ---------- Home page service preview cards ---------- */
 
 .preview-grid {
@@ -891,6 +937,9 @@ footer a { color: #b8c5d6; }
 
   .hero::after { font-size: 8rem; opacity: 0.045; }
   .page-header::after { font-size: 5.5rem; opacity: 0.05; }
+
+  .cs-group { margin-bottom: 42px; }
+  .cs-group-title { font-size: 1.2rem; }
 
   .acc summary { font-size: 0.96rem; padding: 16px 46px 16px 18px; }
   .acc-body { padding-left: 18px; padding-right: 18px; }
