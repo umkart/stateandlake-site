@@ -1,7 +1,7 @@
 /* ============================================
    State & Lake, LLC — Shared Stylesheet
-   CASE STUDIES: four pillar cards in a grid,
-   each containing collapsible case studies
+   CASE STUDIES: pillar cards now collapsed by
+   default; click a card to reveal its scenarios
    ============================================ */
 
 :root {
@@ -505,9 +505,11 @@ section { padding: 78px 24px; }
 /* ============================================
    CASE STUDY PILLAR CARDS
    --------------------------------------------
-   Four cards in a 2x2 grid on desktop. Each
-   card holds a pillar header plus a list of
-   collapsible case studies.
+   Each pillar is a <details> card, CLOSED by
+   default. Clicking the card header reveals the
+   list of scenarios. Each scenario is itself a
+   nested <details> that expands to show the
+   Risk / Approach / Outcome rows.
 
    Cards use align-items: start so an open card
    grows without stretching its neighbor.
@@ -527,14 +529,46 @@ section { padding: 78px 24px; }
   border: 1px solid var(--border);
   border-top: 4px solid var(--navy);
   border-radius: 8px;
-  padding: 26px 24px 20px;
   box-shadow: 0 2px 10px rgba(15,36,64,0.04);
+  overflow: hidden;
+  transition: box-shadow 0.18s ease;
 }
 
+.cs-card[open] {
+  box-shadow: 0 6px 22px rgba(15,36,64,0.09);
+  border-top-color: var(--rust);
+}
+
+/* ---- Card header (the clickable summary) ---- */
+
 .cs-card-head {
+  display: block;
+  padding: 26px 46px 24px 24px;
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+  transition: background 0.15s ease;
+}
+
+.cs-card-head:hover { background: var(--gray-bg); }
+.cs-card-head::-webkit-details-marker { display: none; }
+.cs-card-head::marker { content: ""; }
+
+.cs-card-head:after {
+  content: "+";
+  position: absolute;
+  right: 22px;
+  top: 26px;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--rust);
+  line-height: 1;
+}
+
+.cs-card[open] .cs-card-head:after { content: "\2212"; }
+
+.cs-card[open] .cs-card-head {
   border-bottom: 1px solid var(--border);
-  padding-bottom: 16px;
-  margin-bottom: 6px;
 }
 
 .cs-card-num {
@@ -548,20 +582,26 @@ section { padding: 78px 24px; }
 }
 
 .cs-card-title {
+  font-family: 'Helvetica Neue',Arial,sans-serif;
+  font-weight: 600;
+  color: var(--navy);
   font-size: 1.12rem;
+  display: block;
   margin-bottom: 8px;
+  line-height: 1.3;
 }
 
 .cs-card-sub {
   font-family: 'Helvetica Neue',Arial,sans-serif;
   font-size: 0.88rem;
   color: var(--muted);
-  margin: 0;
+  display: block;
+  line-height: 1.5;
 }
 
-.cs-card-list { }
+/* ---- Scenario list inside an open card ---- */
 
-/* Individual collapsible case study inside a card */
+.cs-card-list { padding: 4px 24px 18px; }
 
 .cs-item { border-bottom: 1px solid var(--border); }
 
@@ -572,7 +612,7 @@ section { padding: 78px 24px; }
   font-size: 0.9rem;
   font-weight: 600;
   color: var(--navy);
-  padding: 13px 30px 13px 0;
+  padding: 13px 28px 13px 0;
   cursor: pointer;
   list-style: none;
   position: relative;
@@ -587,9 +627,9 @@ section { padding: 78px 24px; }
 .cs-item summary:after {
   content: "+";
   position: absolute;
-  right: 4px;
+  right: 2px;
   top: 11px;
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 400;
   color: var(--rust);
   line-height: 1;
@@ -599,10 +639,9 @@ section { padding: 78px 24px; }
 .cs-item[open] summary { color: var(--rust); }
 
 .cs-item-body {
-  padding: 4px 0 20px;
+  padding: 16px 0 20px;
   border-top: 1px dashed var(--border);
   margin-top: 2px;
-  padding-top: 16px;
 }
 
 .cs-card-empty {
@@ -610,7 +649,7 @@ section { padding: 78px 24px; }
   font-size: 0.88rem;
   color: var(--muted);
   font-style: italic;
-  padding: 16px 0 4px;
+  padding: 14px 0 6px;
 }
 
 /* ---------- Home page service preview cards ---------- */
@@ -1005,7 +1044,8 @@ footer a { color: #b8c5d6; }
   .hero::after { font-size: 8rem; opacity: 0.045; }
   .page-header::after { font-size: 5.5rem; opacity: 0.05; }
 
-  .cs-card { padding: 22px 18px 16px; }
+  .cs-card-head { padding: 22px 40px 20px 18px; }
+  .cs-card-list { padding: 4px 18px 14px; }
   .cs-item summary { font-size: 0.86rem; }
 
   .acc summary { font-size: 0.96rem; padding: 16px 46px 16px 18px; }
