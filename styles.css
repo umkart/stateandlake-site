@@ -1,8 +1,7 @@
 /* ============================================
    State & Lake, LLC — Shared Stylesheet
-   ADDS: .cs-group styles for the Case Studies
-   page, which now groups examples under the
-   four service pillars
+   CASE STUDIES: four pillar cards in a grid,
+   each containing collapsible case studies
    ============================================ */
 
 :root {
@@ -395,7 +394,7 @@ section { padding: 78px 24px; }
 
 .trust-item:before { content: "\2713"; color: var(--rust); font-weight: 700; }
 
-/* ---------- Accordion (collapsible items) ---------- */
+/* ---------- Accordion (Services page) ---------- */
 
 .accordion { max-width: 900px; margin: 0 auto; }
 
@@ -476,6 +475,8 @@ section { padding: 78px 24px; }
 .acc-list li:last-child { border-bottom: none; padding-bottom: 0; }
 .acc-list li:before { content: "\2022"; color: var(--rust); position: absolute; left: 0; font-weight: 700; }
 
+/* Shared Risk / Approach / Outcome rows */
+
 .acc-row { font-family: 'Helvetica Neue',Arial,sans-serif; font-size: 0.92rem; margin-bottom: 14px; }
 
 .acc-row strong {
@@ -502,49 +503,114 @@ section { padding: 78px 24px; }
 }
 
 /* ============================================
-   CASE STUDY PILLAR GROUPS
+   CASE STUDY PILLAR CARDS
    --------------------------------------------
-   Used on case-studies.html to group examples
-   under the four service pillars. Each group
-   is a visible header followed by its own
-   .accordion of individual case studies.
+   Four cards in a 2x2 grid on desktop. Each
+   card holds a pillar header plus a list of
+   collapsible case studies.
+
+   Cards use align-items: start so an open card
+   grows without stretching its neighbor.
    ============================================ */
 
-.cs-group { max-width: 900px; margin: 0 auto 56px; }
-
-.cs-group:last-of-type { margin-bottom: 0; }
-
-.cs-group-head {
-  border-bottom: 2px solid var(--navy);
-  padding-bottom: 12px;
-  margin-bottom: 22px;
+.cs-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: start;
+  gap: 26px;
+  max-width: 1120px;
+  margin: 0 auto;
 }
 
-.cs-group-num {
+.cs-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--navy);
+  border-radius: 8px;
+  padding: 26px 24px 20px;
+  box-shadow: 0 2px 10px rgba(15,36,64,0.04);
+}
+
+.cs-card-head {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 16px;
+  margin-bottom: 6px;
+}
+
+.cs-card-num {
   font-family: 'Helvetica Neue',Arial,sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
   color: var(--rust);
   font-weight: 700;
-  font-size: 0.8rem;
-  letter-spacing: 1px;
   display: block;
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 }
 
-.cs-group-title { font-size: 1.35rem; margin-bottom: 6px; }
-
-.cs-group-sub {
-  font-family: 'Helvetica Neue',Arial,sans-serif;
-  font-size: 0.9rem;
-  color: var(--muted);
-  font-style: italic;
+.cs-card-title {
+  font-size: 1.12rem;
+  margin-bottom: 8px;
 }
 
-.cs-group-empty {
+.cs-card-sub {
+  font-family: 'Helvetica Neue',Arial,sans-serif;
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+.cs-card-list { }
+
+/* Individual collapsible case study inside a card */
+
+.cs-item { border-bottom: 1px solid var(--border); }
+
+.cs-item:last-child { border-bottom: none; }
+
+.cs-item summary {
   font-family: 'Helvetica Neue',Arial,sans-serif;
   font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--navy);
+  padding: 13px 30px 13px 0;
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+  line-height: 1.45;
+  transition: color 0.15s ease;
+}
+
+.cs-item summary:hover { color: var(--rust); }
+.cs-item summary::-webkit-details-marker { display: none; }
+.cs-item summary::marker { content: ""; }
+
+.cs-item summary:after {
+  content: "+";
+  position: absolute;
+  right: 4px;
+  top: 11px;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--rust);
+  line-height: 1;
+}
+
+.cs-item[open] summary:after { content: "\2212"; }
+.cs-item[open] summary { color: var(--rust); }
+
+.cs-item-body {
+  padding: 4px 0 20px;
+  border-top: 1px dashed var(--border);
+  margin-top: 2px;
+  padding-top: 16px;
+}
+
+.cs-card-empty {
+  font-family: 'Helvetica Neue',Arial,sans-serif;
+  font-size: 0.88rem;
   color: var(--muted);
   font-style: italic;
-  padding: 8px 0;
+  padding: 16px 0 4px;
 }
 
 /* ---------- Home page service preview cards ---------- */
@@ -902,6 +968,7 @@ footer a { color: #b8c5d6; }
 @media (max-width: 900px) {
   .about-grid, .contact-grid, .preview-grid { grid-template-columns: 1fr; }
   .insights-grid { grid-template-columns: 1fr; }
+  .cs-card-grid { grid-template-columns: 1fr; }
   .process-grid { grid-template-columns: 1fr 1fr; }
   .hero h1 { font-size: 1.9rem; }
   .page-header h1 { font-size: 1.65rem; }
@@ -938,8 +1005,8 @@ footer a { color: #b8c5d6; }
   .hero::after { font-size: 8rem; opacity: 0.045; }
   .page-header::after { font-size: 5.5rem; opacity: 0.05; }
 
-  .cs-group { margin-bottom: 42px; }
-  .cs-group-title { font-size: 1.2rem; }
+  .cs-card { padding: 22px 18px 16px; }
+  .cs-item summary { font-size: 0.86rem; }
 
   .acc summary { font-size: 0.96rem; padding: 16px 46px 16px 18px; }
   .acc-body { padding-left: 18px; padding-right: 18px; }
