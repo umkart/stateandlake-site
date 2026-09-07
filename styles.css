@@ -1,8 +1,8 @@
 /* ============================================
    State & Lake, LLC — Shared Stylesheet
-   BEAN FIX: taller photo bands (520px) and
-   Bean crop recentered to 50% so the base of
-   the sculpture is no longer clipped
+   FIXES: ampersand restored to rust (was white
+   and invisible on the nav) and process circle
+   numerals changed to white
    ============================================ */
 
 :root {
@@ -67,8 +67,10 @@ nav {
   gap: 6px;
 }
 
+/* The ampersand sits on the WHITE nav bar.
+   It must stay rust. Never set this to #fff. */
 .logo .amp-symbol {
-  color: #fff;
+  color: var(--rust);
   font-style: italic;
   font-weight: 400;
   font-size: 1.2em;
@@ -251,10 +253,6 @@ nav {
 /* ============================================
    Q WATERMARK
    --------------------------------------------
-   The Q's tail hangs below the bowl. If the
-   glyph is too large for its band, the tail is
-   cropped and the letter reads as an "O".
-
    TO ADJUST VISIBILITY: change opacity.
      Hero max 0.07, page header max 0.08.
    TO ADJUST SIZE: change font-size. If the tail
@@ -290,18 +288,11 @@ nav {
 /* ============================================
    PHOTO BANDS — full-width banner
    --------------------------------------------
-   object-fit: cover always crops whatever does
-   not fit the band's aspect ratio. Taller band
-   = less total crop.
-
    HOW TO TUNE THE CROP:
    object-position: center <PERCENT>;
 
-   LOWER percent  = window moves UP in the source
-                    file, so the subject sits
-                    LOWER in the visible band
-   HIGHER percent = window moves DOWN, subject
-                    sits HIGHER in the band
+   LOWER percent  = subject sits LOWER in band
+   HIGHER percent = subject sits HIGHER in band
 
    If the Bean's base is still tight, step the
    --bean value down from 50% toward 44%.
@@ -665,12 +656,14 @@ section { padding: 78px 24px; }
 
 .process-step { text-align: center; padding: 0 12px; }
 
+/* Numeral is WHITE on the navy circle, with the
+   rust ring as the only accent. */
 .process-num {
   width: 46px;
   height: 46px;
   border-radius: 50%;
   background: var(--navy);
-  color: var(--rust);
+  color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
