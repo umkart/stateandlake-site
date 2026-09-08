@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Three Places the Macro Environment Lands in the Financial Statements | State &amp; Lake, LLC</title>
+<meta name="description" content="Rates, tariffs, and refinancing in the 2026 reporting cycle. An insight paper from State &amp; Lake, LLC.">
+<style>
+:root{
+  --ink:#14293d;
+  --ink-soft:#3d5568;
+  --body:#22303c;
+  --accent:#9a7b4f;
+  --rule:#d8dee4;
+  --bg:#ffffff;
+  --wash:#f6f7f9;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--wash);
+  color:var(--body);
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:11.25pt;
+  line-height:1.62;
+}
+.sheet{
+  max-width:7.9in;
+  margin:0 auto;
+  background:var(--bg);
+  padding:0.85in 0.95in 0.7in;
+  box-shadow:0 1px 3px rgba(20,41,61,.10),0 12px 32px rgba(20,41,61,.07);
+}
+
+.masthead{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:24px;
+  padding-bottom:14px;
+  border-bottom:2px solid var(--ink);
+}
+.logo{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:19pt;
+  letter-spacing:.055em;
+  color:var(--ink);
+  line-height:1.1;
+  text-transform:uppercase;
+}
+.logo .amp{color:var(--accent);font-style:italic;letter-spacing:0}
+.logo .llc{
+  font-size:8pt;
+  letter-spacing:.16em;
+  vertical-align:super;
+  margin-left:5px;
+  color:var(--ink-soft);
+}
+.logo-rule{width:38px;height:2px;background:var(--accent);margin:8px 0 7px}
+.logo-tagline{
+  font-family:Helvetica,Arial,sans-serif;
+  font-size:7.4pt;
+  letter-spacing:.145em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+}
+.masthead-meta{
+  font-family:Helvetica,Arial,sans-serif;
+  font-size:7.4pt;
+  letter-spacing:.145em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+  text-align:right;
+  padding-top:5px;
+  white-space:nowrap;
+}
+
+.titleblock{padding:34px 0 26px;border-bottom:1px solid var(--rule)}
+.eyebrow{
+  font-family:Helvetica,Arial,sans-serif;
+  font-size:7.6pt;
+  letter-spacing:.19em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:16px;
+}
+h1{
+  font-size:25pt;
+  line-height:1.16;
+  color:var(--ink);
+  font-weight:normal;
+  margin:0 0 12px;
+  letter-spacing:-.008em;
+}
+.standfirst{
+  font-size:12.5pt;
+  line-height:1.48;
+  color:var(--ink-soft);
+  font-style:italic;
+  margin:0;
+}
+
+h2{
+  font-family:Helvetica,Arial,sans-serif;
+  font-size:11.5pt;
+  letter-spacing:.02em;
+  color:var(--ink);
+  margin:34px 0 4px;
+  padding-top:15px;
+  border-top:1px solid var(--rule);
+  page-break-after:avoid;
+}
+h2 .num{color:var(--accent);margin-right:9px;font-weight:normal}
+h3{
+  font-family:Helvetica,Arial,sans-serif;
+  font-size:9.6pt;
+  letter-spacing:.03em;
+  color:var(--ink);
+  margin:24px 0 -6px;
+  page-break-after:avoid;
+}
+p{margin:13px 0}
+strong{color:var(--ink)}
+ul{margin:13px 0;padding-left:19px}
+li{margin:7px 0}
+
+.lede::first-letter{
+  float:left;
+  font-size:34pt;
+  line-height:.84;
+  color:var(--accent);
+  padding:4px 7px 0 0;
+}
+
+.pull{
+  margin:26px 0;
+  padding:16px 20px;
+  background:var(--wash);
+  border-left:3px solid var(--accent);
+  font-size:10.6pt;
+}
+.pull p{margin:7px 0}
+.pull .label{
+  font-family:Helvetica,Arial,sans-serif;
+  font-size:7.4pt;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin:0 0 7px;
+}
+
+table{border-collapse:collapse;width:100%;margin:22px 0;font-size:10.2pt}
+th{
+  font-family:Helvetica,Arial,sans-serif;
+  font-size:7.8pt;
+  letter-spacing:.11em;
+  text-transform:uppercase;
+  color:var(--ink);
+  text-align:left;
+  padding:8px 11px 8px 0;
+  border-bottom:1.5px solid var(--ink);
+  vertical-align:bottom;
+}
+td{padding:9px 11px 9px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+tr:last-child td{border-bottom:none}
+
+.colophon{
+  margin-top:40px;
+  padding-top:16px;
+  border-top:2px solid var(--ink);
+  font-family:Helvetica,Arial,sans-serif;
+  font-size:8.2pt;
+  line-height:1.58;
+  color:var(--ink-soft);
+}
+.colophon .firm{
+  color:var(--ink);
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  font-size:8pt;
+  margin-bottom:6px;
+}
+.disclaimer{margin-top:11px;font-size:7.6pt;line-height:1.55}
+
+@page{size:letter;margin:0.72in 0.8in}
+@media print{
+  body{background:#fff;font-size:10.5pt}
+  .sheet{box-shadow:none;max-width:none;margin:0;padding:0}
+  h2{page-break-after:avoid}
+  .pull,table{page-break-inside:avoid}
+  .titleblock{page-break-after:avoid}
+}
+@media(max-width:640px){
+  .sheet{padding:0.5in 0.42in}
+  .masthead{flex-direction:column;gap:14px}
+  .masthead-meta{text-align:left}
+  h1{font-size:20pt}
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <div class="masthead">
+    <div>
+      <div class="logo">State <span class="amp">&amp;</span> Lake<span class="llc">LLC</span></div>
+      <div class="logo-rule"></div>
+      <div class="logo-tagline">Accounting and Reporting Advisory</div>
+    </div>
+    <div class="masthead-meta">
+      Insight Paper 03<br>September 2026
+    </div>
+  </div>
+
+  <div class="titleblock">
+    <div class="eyebrow">Technical Accounting</div>
+    <h1>Three Places the Macro Environment Lands in the Financial Statements</h1>
+    <p class="standfirst">Rates, tariffs, and refinancing in the 2026 reporting cycle, and the rolled-forward assumptions that create the real exposure.</p>
+  </div>
+
+  <h2><span class="num">01</span>The Setting</h2>
+
+  <p class="lede">The current environment is defined by a combination that most reporting teams have not worked through together before: policy rates that have stopped falling, long-end yields at multi-decade highs, and trade policy that shifts faster than a forecast cycle.</p>
+
+  <p>The Federal Reserve held its policy rate at 3.50% to 3.75% through mid-2026 as inflation near 3.5% limited room to ease. At the July FOMC meeting, nine members voted to hold, three advocated a quarter-point increase, and none proposed a cut. Meanwhile the long end has moved independently. U.S. 30-year Treasury yields reached their highest level since 2007, trading above 5%, with the 10-year around 4.71%. The New York Fed estimates the term premium near 80 basis points, close to its highest in twelve years.</p>
+
+  <p>This is not a U.S. phenomenon. Japan's 10-year borrowing costs hit a three-decade high just under 3%, with 30-year yields above 4%. Germany's 10-year Bund reached its highest since 2011, French yields their highest since 2008, and UK 30-year borrowing costs approached levels last seen in 1998. The drivers cited include government debt levels, with the U.S. debt pile approaching $40 trillion, oil back above $90 amid the Iran conflict, and heavy borrowing by technology companies funding AI infrastructure competing directly with demand for government bonds.</p>
+
+  <p>Three consequences reach the financial statements. Each is addressed below.</p>
+
+  <h2><span class="num">02</span>Discount Rates and the Impairment Cycle</h2>
+
+  <p>Higher long-end yields raise the risk-free rate embedded in every discounted cash flow model a company runs. The effect is mechanical and it compounds: a higher discount rate reduces the present value of the same forecast, and the effect is largest on cash flows furthest out, which is precisely where terminal value sits.</p>
+
+  <h3>Goodwill</h3>
+  <p>A reporting unit or CGU that cleared its last annual test on a modest cushion may not clear the next one on an unchanged forecast, because the discount rate alone has moved. The judgment that requires the most care is the weighted average cost of capital build: whether the risk-free rate has been updated to current observable yields, whether the equity risk premium and any company-specific premium have been reassessed rather than rolled forward, and whether the resulting rate is internally consistent with the cash flows it discounts. Auditors are focused on this consistency, and a WACC updated for the risk-free rate while the cash flow forecast retains assumptions set in a lower-rate environment is a common and vulnerable combination.</p>
+
+  <h3>Long-lived assets and right-of-use assets</h3>
+  <p>Indicators of impairment should be evaluated where the cost of capital has risen materially, particularly for asset groups with long recovery horizons. Under U.S. GAAP the undiscounted recoverability test provides a buffer that IFRS does not, which means the same facts can produce impairment under IFRS and not under GAAP. Dual reporters should expect that divergence and be prepared to explain it.</p>
+
+  <h3>Equity method investments</h3>
+  <p>Where an investor cannot test the investee's underlying assets directly, the other-than-temporary impairment analysis rests on indicator evaluation rather than direct measurement. A rising cost of capital, deteriorating investee performance against original investment expectations, and peer or industry decline are each indicators that require documented evaluation.</p>
+
+  <h3>Disclosure</h3>
+  <p>Where a conclusion is close, sensitivity disclosure is what protects the company. Disclosing the discount rate at which an impairment would be triggered, or the headroom in percentage terms, is far more defensible than a conclusion presented without margin. Under IFRS, disclosure of key assumptions and sensitivity for CGUs carrying significant goodwill is required, not optional.</p>
+
+  <div class="pull">
+    <p class="label">Practical note</p>
+    <p>Test earlier than the calendar requires. A goodwill test performed in the final weeks of the close leaves no time to engage a valuation specialist, run alternative scenarios, or prepare the disclosure and the investor message. Companies with thin cushions should be running preliminary analysis now.</p>
+  </div>
+
+  <h2><span class="num">03</span>Tariffs and the Cost Side of the Income Statement</h2>
+
+  <p>Trade policy has moved from a planning assumption to a recurring accounting question. Current U.S. tariffs and counter-tariffs from trading partners including Canada have not derailed regional recoveries, but further escalation remains a live risk that is already shifting central bank expectations. For companies with cross-border supply chains, the accounting consequences run through several standards at once.</p>
+
+  <table>
+    <thead>
+      <tr><th style="width:31%">Area</th><th>Consequence</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Inventory measurement</strong></td>
+        <td>Tariffs paid on imported goods are a cost of purchase and are capitalised into inventory. That raises carrying value, which raises the risk of a write-down where selling prices cannot absorb the increase. The lower of cost and net realisable value test under IFRS, and lower of cost or market under U.S. GAAP for entities using LIFO or the retail method, becomes materially more consequential. Standard costs and variance capitalisation also warrant review, since standards set before a tariff change will generate variances that may not be appropriate to defer.</td>
+      </tr>
+      <tr>
+        <td><strong>Impairment of production assets</strong></td>
+        <td>Where tariffs render a facility, product line, or sourcing arrangement uneconomic, impairment of the related assets must be recognised. This extends to intangibles such as customer relationships and supplier arrangements whose value depended on the prior cost structure.</td>
+      </tr>
+      <tr>
+        <td><strong>Revenue and contract economics</strong></td>
+        <td>Fixed-price contracts priced before a tariff increase compress margin with no offsetting price adjustment. Where a contract becomes loss-making, IFRS requires an onerous contract provision under IAS 37, and U.S. GAAP requires evaluation of contract loss recognition depending on the arrangement. Variable consideration estimates should be reassessed where tariff-driven price adjustments, rebates, or surcharges have been introduced, and new pricing mechanisms evaluated for whether they constitute contract modifications.</td>
+      </tr>
+      <tr>
+        <td><strong>Concentration and liquidity</strong></td>
+        <td>Where a supply chain depends on a jurisdiction facing escalating duties, the resulting concentration is a disclosure matter, and in severe cases a going concern one.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Documentation discipline.</strong> The single most useful step is to identify which contracts, product lines, and sourcing arrangements are tariff-exposed, and quantify that exposure before it is needed. The companies that handle this well have a schedule; the companies that struggle reconstruct one under audit pressure.</p>
+
+  <h2><span class="num">04</span>Refinancing, Covenants, and Hedging</h2>
+
+  <p>For any company with debt maturing into this market, the accounting consequences of refinancing are larger than they were three years ago, because the terms available now differ so substantially from the terms being replaced.</p>
+
+  <h3>Modification versus extinguishment</h3>
+  <p>This is the highest-value technical question in the current environment. When existing debt is refinanced at materially higher rates, the change in cash flows is more likely to exceed the significance threshold, driving extinguishment accounting and immediate recognition of any premium and unamortised financing costs rather than deferral over the new term.</p>
+
+  <p>The analysis is not portfolio-level. For a syndicated facility, the cash flow significance test is performed creditor by creditor for term participants, with separate analysis of borrowing capacity changes for revolver participants, and unamortised costs allocated pro rata for lenders whose capacity declined. A single portfolio-level conclusion will produce the wrong write-off. Where an existing series is redeemed with proceeds from a new issuance to overlapping holders, the question of whether the transactions were negotiated in contemplation of one another becomes determinative, and an accounting policy election applied consistently is essential.</p>
+
+  <h3>Covenant headroom and classification</h3>
+  <p>Rising interest expense compresses coverage ratios directly. Where a covenant breach is possible within twelve months, classification of long-term debt as current becomes a live question, and the existence and effectiveness of any waiver or cure provision needs assessment before the balance sheet date rather than after. Companies with covenants defined against operating profit or EBIT face an additional layer, since IFRS 18 adoption in 2027 may change the defined subtotal those covenants reference. Renegotiating a covenant definition and a maturity at the same time is easier than doing them separately.</p>
+
+  <h3>Going concern</h3>
+  <p>Where refinancing is required within the assessment period and market access is uncertain, the going concern analysis moves from routine to substantive. It requires assessing liquidity sources against obligations coming due, evaluating covenant headroom under multiple forecast scenarios, and incorporating the effect of any facility obtained after period end. The conclusion should be documented and reviewed at the CAO and CFO level, with the monitoring plan articulated.</p>
+
+  <h3>Hedging</h3>
+  <p>Elevated and volatile rates increase both the appetite for hedging and the cost of getting the accounting wrong. A strategy that manages economic exposure correctly can still fail hedge accounting and push fair value changes through earnings. The requirements that most often cause problems are contemporaneous documentation of the risk management objective and hedged forecasted transactions, assessment of counterparty default probability, and the consequence if principal outstanding falls below an amortising notional. None of these can be fixed retroactively, which is why the accounting assessment belongs in the structuring conversation with Treasury rather than after execution.</p>
+
+  <h3>Fair value disclosure</h3>
+  <p>For companies carrying debt at amortised cost, the fair value disclosure will show a material discount to carrying value where fixed-rate debt was issued in a lower-rate environment. That is expected and not an impairment, but it invites investor questions and should be anticipated in the disclosure and the earnings script.</p>
+
+  <h2><span class="num">05</span>What Connects Them</h2>
+
+  <p>These three areas share a structure. In each, the accounting outcome depends on an assumption that was reasonable when it was set and is no longer current: a discount rate built in a different rate environment, a standard cost or contract price set before a tariff, a covenant or hedge designed for a different cost of capital.</p>
+
+  <div class="pull">
+    <p class="label">The failure mode</p>
+    <p>The exposure is not technical error. It is a rolled-forward assumption that nobody challenged because it had been correct for several years.</p>
+  </div>
+
+  <p>The most valuable exercise available to a reporting function right now is to identify every material estimate that depends on the rate or trade environment, confirm when each input was last genuinely reassessed rather than carried forward, and quantify what happens under current conditions before the close begins.</p>
+
+  <div class="colophon">
+    <div class="firm">State &amp; Lake, LLC</div>
+    <p style="margin:0">A boutique accounting and reporting advisory practice serving public and growth-stage companies. Technical accounting under U.S. GAAP and IFRS, SEC and TSX reporting, IPO readiness, SOX compliance, and strategic fractional support.</p>
+    <p class="disclaimer">This paper reflects market and policy conditions as of September 2026. This material is informational and does not constitute accounting, legal, tax, or other professional advice. Readers should consult their own advisors with respect to their particular facts and circumstances. &copy; 2026 State &amp; Lake, LLC. All rights reserved.</p>
+  </div>
+
+</div>
+</body>
+</html>

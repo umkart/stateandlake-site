@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IFRS 18: You Are Already in the Comparative Period | State &amp; Lake, LLC</title>
+<meta name="description" content="What IFRS 18 adoption on January 1, 2027 requires, and why the work starts now. An insight paper from State &amp; Lake, LLC.">
+<style>
+:root{
+  --ink:#14293d;
+  --ink-soft:#3d5568;
+  --body:#22303c;
+  --accent:#9a7b4f;
+  --rule:#d8dee4;
+  --bg:#ffffff;
+  --wash:#f6f7f9;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--wash);
+  color:var(--body);
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:11.25pt;
+  line-height:1.62;
+}
+.sheet{
+  max-width:7.9in;
+  margin:0 auto;
+  background:var(--bg);
+  padding:0.85in 0.95in 0.7in;
+  box-shadow:0 1px 3px rgba(20,41,61,.10),0 12px 32px rgba(20,41,61,.07);
+}
+
+.masthead{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:24px;
+  padding-bottom:14px;
+  border-bottom:2px solid var(--ink);
+}
+.logo{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:19pt;
+  letter-spacing:.055em;
+  color:var(--ink);
+  line-height:1.1;
+  text-transform:uppercase;
+}
+.logo .amp{color:var(--accent);font-style:italic;letter-spacing:0}
+.logo .llc{
+  font-size:8pt;
+  letter-spacing:.16em;
+  vertical-align:super;
+  margin-left:5px;
+  color:var(--ink-soft);
+}
+.logo-rule{width:38px;height:2px;background:var(--accent);margin:8px 0 7px}
+.logo-tagline{
+  font-family:Helvetica,Arial,sans-serif;
+  font-size:7.4pt;
+  letter-spacing:.145em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+}
+.masthead-meta{
+  font-family:Helvetica,Arial,sans-serif;
+  font-size:7.4pt;
+  letter-spacing:.145em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+  text-align:right;
+  padding-top:5px;
+  white-space:nowrap;
+}
+
+.titleblock{padding:34px 0 26px;border-bottom:1px solid var(--rule)}
+.eyebrow{
+  font-family:Helvetica,Arial,sans-serif;
+  font-size:7.6pt;
+  letter-spacing:.19em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:16px;
+}
+h1{
+  font-size:25pt;
+  line-height:1.16;
+  color:var(--ink);
+  font-weight:normal;
+  margin:0 0 12px;
+  letter-spacing:-.008em;
+}
+.standfirst{
+  font-size:12.5pt;
+  line-height:1.48;
+  color:var(--ink-soft);
+  font-style:italic;
+  margin:0;
+}
+
+h2{
+  font-family:Helvetica,Arial,sans-serif;
+  font-size:11.5pt;
+  letter-spacing:.02em;
+  color:var(--ink);
+  margin:34px 0 4px;
+  padding-top:15px;
+  border-top:1px solid var(--rule);
+  page-break-after:avoid;
+}
+h2 .num{color:var(--accent);margin-right:9px;font-weight:normal}
+h3{
+  font-family:Helvetica,Arial,sans-serif;
+  font-size:9.6pt;
+  letter-spacing:.03em;
+  color:var(--ink);
+  margin:24px 0 -6px;
+  page-break-after:avoid;
+}
+p{margin:13px 0}
+strong{color:var(--ink)}
+ul{margin:13px 0;padding-left:19px}
+li{margin:7px 0}
+
+.lede::first-letter{
+  float:left;
+  font-size:34pt;
+  line-height:.84;
+  color:var(--accent);
+  padding:4px 7px 0 0;
+}
+
+.pull{
+  margin:26px 0;
+  padding:16px 20px;
+  background:var(--wash);
+  border-left:3px solid var(--accent);
+  font-size:10.6pt;
+}
+.pull p{margin:7px 0}
+.pull .label{
+  font-family:Helvetica,Arial,sans-serif;
+  font-size:7.4pt;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin:0 0 7px;
+}
+
+table{border-collapse:collapse;width:100%;margin:22px 0;font-size:10.2pt}
+th{
+  font-family:Helvetica,Arial,sans-serif;
+  font-size:7.8pt;
+  letter-spacing:.11em;
+  text-transform:uppercase;
+  color:var(--ink);
+  text-align:left;
+  padding:8px 11px 8px 0;
+  border-bottom:1.5px solid var(--ink);
+  vertical-align:bottom;
+}
+td{padding:9px 11px 9px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+tr:last-child td{border-bottom:none}
+
+.colophon{
+  margin-top:40px;
+  padding-top:16px;
+  border-top:2px solid var(--ink);
+  font-family:Helvetica,Arial,sans-serif;
+  font-size:8.2pt;
+  line-height:1.58;
+  color:var(--ink-soft);
+}
+.colophon .firm{
+  color:var(--ink);
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  font-size:8pt;
+  margin-bottom:6px;
+}
+.disclaimer{margin-top:11px;font-size:7.6pt;line-height:1.55}
+
+@page{size:letter;margin:0.72in 0.8in}
+@media print{
+  body{background:#fff;font-size:10.5pt}
+  .sheet{box-shadow:none;max-width:none;margin:0;padding:0}
+  h2{page-break-after:avoid}
+  .pull,table{page-break-inside:avoid}
+  .titleblock{page-break-after:avoid}
+}
+@media(max-width:640px){
+  .sheet{padding:0.5in 0.42in}
+  .masthead{flex-direction:column;gap:14px}
+  .masthead-meta{text-align:left}
+  h1{font-size:20pt}
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <div class="masthead">
+    <div>
+      <div class="logo">State <span class="amp">&amp;</span> Lake<span class="llc">LLC</span></div>
+      <div class="logo-rule"></div>
+      <div class="logo-tagline">Accounting and Reporting Advisory</div>
+    </div>
+    <div class="masthead-meta">
+      Insight Paper 02<br>September 2026
+    </div>
+  </div>
+
+  <div class="titleblock">
+    <div class="eyebrow">IFRS Technical Accounting</div>
+    <h1>IFRS 18: You Are Already in the Comparative Period</h1>
+    <p class="standfirst">What adoption on January 1, 2027 requires, why recognition and measurement neutrality makes the standard easy to underestimate, and where the real exposure sits.</p>
+  </div>
+
+  <h2><span class="num">01</span>The Deadline Is Not the Date You Think</h2>
+
+  <p class="lede">IFRS 18 <em>Presentation and Disclosure in Financial Statements</em> replaces IAS 1 and is effective for annual reporting periods beginning on or after January 1, 2027. Early adoption is permitted and must be disclosed. That framing understates the urgency.</p>
+
+  <p>Application is fully retrospective, which means the comparative period must be restated on the new basis. For a December 31 year-end entity, the comparative period began January 1, 2026. The transactions being recorded today are the ones that will be re-presented in the first IFRS 18 financial statements. For a June 30 year-end, the comparative period began July 1, 2026.</p>
+
+  <div class="pull">
+    <p class="label">Timing</p>
+    <p>The standard also carries consequential amendments to IAS 7, IAS 8, IAS 33, and IAS 34. These take effect at the same time and cannot be adopted separately.</p>
+  </div>
+
+  <h2><span class="num">02</span>What Changes</h2>
+
+  <p>IFRS 18 does not change recognition or measurement. Net profit is unaffected. What changes is where amounts appear, what subtotals are required, and how much must be disclosed about the measures management uses to describe performance. For companies whose investor narrative rests on operating profit or an adjusted earnings measure, that is not a cosmetic change.</p>
+
+  <p>Three structural changes drive most of the work.</p>
+
+  <p><strong>Five categories in the statement of profit or loss.</strong> Income and expenses are classified into operating, investing, financing, income taxes, and discontinued operations, with new required subtotals. Operating profit becomes a defined subtotal rather than a matter of presentation choice, which means it becomes comparable across entities and, critically, may differ from the operating profit a company reports today.</p>
+
+  <p><strong>Management-defined performance measures.</strong> Subtotals of income and expenses that management uses in public communications to convey its view of financial performance fall within the MPM definition and trigger disclosure in a single dedicated note.</p>
+
+  <p><strong>Expanded disaggregation.</strong> The standard tightens the requirements for how items are grouped and labelled throughout the primary statements and notes.</p>
+
+  <h2><span class="num">03</span>Five Requirements That Catch Companies by Surprise</h2>
+
+  <p>The category definitions read simply and apply less simply. The following are the areas where practice most often diverges from first expectation.</p>
+
+  <h3>Costs of holding non-operating assets sit in operating</h3>
+  <p>An entity without a specified main business activity of investing in assets may still hold assets generating independent cash flows, such as an investment property or surplus cash invested in financial assets. Fair value changes, rental or investment income, and gains and losses on disposal go to investing. The costs of holding those assets do not. Repairs, property taxes, buildings insurance, and any service charge income recharged to tenants are presented in operating. Fees paid to a fund manager for managing investments are likewise operating.</p>
+
+  <h3>Gains and losses on disposal of operating non-current assets are operating</h3>
+  <p>The cash flows from buying and selling property, plant, and equipment are investing cash flows, but the gain or loss on disposal is presented in operating profit or loss. This is defensible, since depreciation, amortisation, and impairment are also operating and disposal gains often reflect nothing more than revisions to earlier residual value and useful life estimates. It nonetheless means the income statement and cash flow statement are not aligned on the same transaction. The result is least intuitive for owner-occupied land and buildings, where the gain is driven by market prices yet still lands in operating. By contrast, for equity-accounted associates and joint ventures, both the share of results and any gain or loss on disposal go to investing.</p>
+
+  <h3>Significant financing components split asymmetrically</h3>
+  <p>Where a customer pays significantly in advance, the resulting interest expense is presented in financing. Where a customer pays significantly in arrears, the interest income recognised is presented by default in operating, not as interest income in investing. Under IAS 1, that interest income would typically have appeared below operating profit adjacent to finance expense. Companies with long-dated customer arrangements should expect operating profit to move.</p>
+
+  <h3>By-function presenters face a materially larger disclosure burden</h3>
+  <p>IAS 1 has always required note disclosure of expenses by nature when the face of the income statement is presented by function. That disclosure has only ever been required in total. IFRS 18 requires disclosure of how much of each by-nature amount is included in each by-function line item. A company presenting cost of sales, selling, administrative, and research and development lines must now disclose how much staff cost, depreciation, and amortisation sits within each. Most general ledgers were not designed to produce that matrix.</p>
+
+  <h3>Foreign exchange follows the underlying item</h3>
+  <p>FX gains and losses are presented in the same category as the income and expenses of the items that gave rise to them. FX on a foreign currency loan goes to financing alongside the interest; FX on a trade receivable or payable goes to operating alongside the revenue or expense. Where a transaction touches more than one category, such as a foreign currency purchase on deferred terms, management must judge whether the FX difference relates to the financing amount and allocate accordingly. Where that judgment would take undue cost or effort, the FX difference is presented in operating.</p>
+
+  <h2><span class="num">04</span>Management-Defined Performance Measures</h2>
+
+  <p>The MPM note is where the standard bites hardest on investor communication.</p>
+
+  <p>Each MPM requires reconciliation to the most directly comparable subtotal or total required by IFRS Accounting Standards. Where an MPM is a pre-tax measure, and many adjusted earnings measures are, IFRS 18 additionally requires disclosure of the income tax effect of each reconciling item. That is a computation most companies do not perform today, and it requires effective tax rate analysis at the level of individual adjustments.</p>
+
+  <p>The practical consequence is that every adjusted measure a company publishes now carries a documented reconciliation showing exactly what was excluded and what the tax effect of each exclusion was. Measures that survived light scrutiny under a press-release-only disclosure regime will be harder to defend in a note.</p>
+
+  <h2><span class="num">05</span>The Labelling Requirement</h2>
+
+  <p>IFRS 18 requires items to be labelled and described in a way that faithfully represents their characteristics, throughout the primary statements and the notes. Where an item aggregates multiple balances, "other" is permitted only when no more informative label can be found, and even then should be qualified as precisely as possible.</p>
+
+  <p>A reasonable rule of thumb: an "other" caption should contain more than one class of item, should appear last in a list of more specifically described items, and each component within it should be smaller than any separately labelled item outside it. If "other debtors" consists entirely of staff loans, it should be labelled staff loans.</p>
+
+  <p>This sounds minor. In practice it means walking the entire balance sheet and note set looking for aggregations that were never challenged.</p>
+
+  <h2><span class="num">06</span>What Retrospective Application Requires</h2>
+
+  <table>
+    <thead>
+      <tr><th style="width:31%">Requirement</th><th>What it means</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Restate the comparative</strong></td>
+        <td>Prior period profit or loss must be re-presented in the new categories and subtotals.</td>
+      </tr>
+      <tr>
+        <td><strong>Prepare the mandatory reconciliation</strong></td>
+        <td>IFRS 18 specifically requires a reconciliation between the IAS 1 presentation and the IFRS 18 presentation of profit or loss for comparative periods. This is not optional and cannot be satisfied by narrative explanation.</td>
+      </tr>
+      <tr>
+        <td><strong>Consider a third balance sheet</strong></td>
+        <td>Where retrospective application, restatement, or reclassification has a material effect on the opening balance sheet of the preceding period, a third statement of financial position is required.</td>
+      </tr>
+      <tr>
+        <td><strong>Re-present interim statements</strong></td>
+        <td>Condensed interims must present each IFRS 18 heading and subtotal expected to be used, including comparatives. First-quarter 2027 interim reporting is therefore the first live deliverable, not the 2027 annual report.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2><span class="num">07</span>A Practical Sequence</h2>
+
+  <p><strong>Map the profit or loss.</strong> Assign every current line item to one of the five categories and identify what moves. The output should be a quantified bridge from today's operating profit to the IFRS 18 operating profit subtotal.</p>
+
+  <p><strong>Inventory the performance measures.</strong> Identify every subtotal published in earnings releases, investor decks, MD&amp;A, and analyst communications. Determine which fall within the MPM definition, and whether each is worth retaining or should be aligned to a measure the standard exempts.</p>
+
+  <p><strong>Assess the systems.</strong> Determine whether the general ledger can produce the five categories natively and whether it can support the by-nature-within-by-function disclosure matrix and the FX allocation requirements. This is typically the longest-lead item. An entity with an agile system and a small team may adapt quickly; an entity with a large ERP, a dedicated maintenance team, and a change approval process may need a manual workbook for the first cycle while permanent changes are scoped.</p>
+
+  <p><strong>Review contracts and compensation.</strong> Covenants and incentive plans defined by reference to operating profit or EBIT may need renegotiation if the defined subtotal changes. A covenant calculated on a metric that moves through no economic change is a genuine exposure, and lenders are easier to approach early than late.</p>
+
+  <p><strong>Decide the communication strategy.</strong> If operating profit is going to change, the market needs to hear it from the company with the bridge already prepared, not discover it in the first IFRS 18 statements.</p>
+
+  <p><strong>Apply the mapping to the comparative data.</strong> Once the mapping is settled, run it through the comparative period so the restated comparatives are ready rather than reconstructed under deadline.</p>
+
+  <h2><span class="num">08</span>Two Judgments Worth Making Early</h2>
+
+  <p><strong>Early adoption.</strong> Adopting early lets a company control the narrative rather than restate under pressure, and moves the disclosure conversation to a quarter of the company's choosing. It is worth genuine consideration for entities that have completed their mapping and want to get ahead.</p>
+
+  <p><strong>Cross-functional ownership.</strong> This is not a finance-only project. Legal is needed for covenants, human resources for remuneration metrics that will change, investor relations for market communication, and IT for systems. A company that scopes IFRS 18 inside the reporting team alone will discover the covenant and compensation implications too late to do anything about them.</p>
+
+  <h2><span class="num">09</span>Our View</h2>
+
+  <p>The recognition and measurement neutrality of IFRS 18 is what makes it easy to underestimate. Net profit does not change, so the standard reads as a presentation exercise, and presentation exercises get scheduled late.</p>
+
+  <p>The exposure is not in the accounting. It is in the possibility that a company's operating profit subtotal changes, that a covenant or incentive plan is defined against it, that an adjusted measure the market relies on now requires a tax-effected reconciliation in a note, and that the general ledger cannot produce the required disaggregation without manual intervention. Each of those has a long remediation path and a short remaining runway.</p>
+
+  <p>The comparative period is running now. The mapping, MPM inventory, systems assessment, and covenant review should be underway rather than planned.</p>
+
+  <div class="colophon">
+    <div class="firm">State &amp; Lake, LLC</div>
+    <p style="margin:0">A boutique accounting and reporting advisory practice serving public and growth-stage companies. Technical accounting under U.S. GAAP and IFRS, SEC and TSX reporting, IPO readiness, SOX compliance, and strategic fractional support.</p>
+    <p class="disclaimer">This material is informational and does not constitute accounting, legal, tax, or other professional advice. Readers should consult their own advisors with respect to their particular facts and circumstances. &copy; 2026 State &amp; Lake, LLC. All rights reserved.</p>
+  </div>
+
+</div>
+</body>
+</html>

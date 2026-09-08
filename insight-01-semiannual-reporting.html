@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The End of the 10-Q? | State &amp; Lake, LLC</title>
+<meta name="description" content="What the SEC's semiannual reporting proposal would actually require. An insight paper from State &amp; Lake, LLC.">
+<style>
+:root{
+  --ink:#14293d;
+  --ink-soft:#3d5568;
+  --body:#22303c;
+  --accent:#9a7b4f;
+  --rule:#d8dee4;
+  --bg:#ffffff;
+  --wash:#f6f7f9;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--wash);
+  color:var(--body);
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:11.25pt;
+  line-height:1.62;
+}
+.sheet{
+  max-width:7.9in;
+  margin:0 auto;
+  background:var(--bg);
+  padding:0.85in 0.95in 0.7in;
+  box-shadow:0 1px 3px rgba(20,41,61,.10),0 12px 32px rgba(20,41,61,.07);
+}
+
+/* ---------- masthead ---------- */
+.masthead{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:24px;
+  padding-bottom:14px;
+  border-bottom:2px solid var(--ink);
+}
+.logo{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:19pt;
+  letter-spacing:.055em;
+  color:var(--ink);
+  line-height:1.1;
+  text-transform:uppercase;
+}
+.logo .amp{color:var(--accent);font-style:italic;letter-spacing:0}
+.logo .llc{
+  font-size:8pt;
+  letter-spacing:.16em;
+  vertical-align:super;
+  margin-left:5px;
+  color:var(--ink-soft);
+}
+.logo-rule{width:38px;height:2px;background:var(--accent);margin:8px 0 7px}
+.logo-tagline{
+  font-family:Helvetica,Arial,sans-serif;
+  font-size:7.4pt;
+  letter-spacing:.145em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+}
+.masthead-meta{
+  font-family:Helvetica,Arial,sans-serif;
+  font-size:7.4pt;
+  letter-spacing:.145em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+  text-align:right;
+  padding-top:5px;
+  white-space:nowrap;
+}
+
+/* ---------- title block ---------- */
+.titleblock{padding:34px 0 26px;border-bottom:1px solid var(--rule)}
+.eyebrow{
+  font-family:Helvetica,Arial,sans-serif;
+  font-size:7.6pt;
+  letter-spacing:.19em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:16px;
+}
+h1{
+  font-size:25pt;
+  line-height:1.16;
+  color:var(--ink);
+  font-weight:normal;
+  margin:0 0 12px;
+  letter-spacing:-.008em;
+}
+.standfirst{
+  font-size:12.5pt;
+  line-height:1.48;
+  color:var(--ink-soft);
+  font-style:italic;
+  margin:0;
+}
+
+/* ---------- body ---------- */
+h2{
+  font-family:Helvetica,Arial,sans-serif;
+  font-size:11.5pt;
+  letter-spacing:.02em;
+  color:var(--ink);
+  margin:34px 0 4px;
+  padding-top:15px;
+  border-top:1px solid var(--rule);
+  page-break-after:avoid;
+}
+h2 .num{color:var(--accent);margin-right:9px;font-weight:normal}
+h3{
+  font-family:Helvetica,Arial,sans-serif;
+  font-size:9.6pt;
+  letter-spacing:.03em;
+  color:var(--ink);
+  margin:24px 0 -6px;
+  page-break-after:avoid;
+}
+p{margin:13px 0}
+strong{color:var(--ink)}
+em{color:inherit}
+ul{margin:13px 0;padding-left:19px}
+li{margin:7px 0}
+
+.lede::first-letter{
+  float:left;
+  font-size:34pt;
+  line-height:.84;
+  color:var(--accent);
+  padding:4px 7px 0 0;
+}
+
+.pull{
+  margin:26px 0;
+  padding:16px 20px;
+  background:var(--wash);
+  border-left:3px solid var(--accent);
+  font-size:10.6pt;
+}
+.pull p{margin:7px 0}
+.pull .label{
+  font-family:Helvetica,Arial,sans-serif;
+  font-size:7.4pt;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin:0 0 7px;
+}
+
+table{border-collapse:collapse;width:100%;margin:22px 0;font-size:10.2pt}
+th{
+  font-family:Helvetica,Arial,sans-serif;
+  font-size:7.8pt;
+  letter-spacing:.11em;
+  text-transform:uppercase;
+  color:var(--ink);
+  text-align:left;
+  padding:8px 11px 8px 0;
+  border-bottom:1.5px solid var(--ink);
+  vertical-align:bottom;
+}
+td{padding:9px 11px 9px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+tr:last-child td{border-bottom:none}
+
+/* ---------- footer ---------- */
+.colophon{
+  margin-top:40px;
+  padding-top:16px;
+  border-top:2px solid var(--ink);
+  font-family:Helvetica,Arial,sans-serif;
+  font-size:8.2pt;
+  line-height:1.58;
+  color:var(--ink-soft);
+}
+.colophon .firm{
+  color:var(--ink);
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  font-size:8pt;
+  margin-bottom:6px;
+}
+.colophon a{color:var(--ink-soft);text-decoration:none;border-bottom:1px solid var(--rule)}
+.disclaimer{margin-top:11px;font-size:7.6pt;line-height:1.55}
+
+/* ---------- print ---------- */
+@page{size:letter;margin:0.72in 0.8in}
+@media print{
+  body{background:#fff;font-size:10.5pt}
+  .sheet{box-shadow:none;max-width:none;margin:0;padding:0}
+  h2{page-break-after:avoid}
+  .pull,table{page-break-inside:avoid}
+  .titleblock{page-break-after:avoid}
+}
+@media(max-width:640px){
+  .sheet{padding:0.5in 0.42in}
+  .masthead{flex-direction:column;gap:14px}
+  .masthead-meta{text-align:left}
+  h1{font-size:20pt}
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <div class="masthead">
+    <div>
+      <div class="logo">State <span class="amp">&amp;</span> Lake<span class="llc">LLC</span></div>
+      <div class="logo-rule"></div>
+      <div class="logo-tagline">Accounting and Reporting Advisory</div>
+    </div>
+    <div class="masthead-meta">
+      Insight Paper 01<br>September 2026
+    </div>
+  </div>
+
+  <div class="titleblock">
+    <div class="eyebrow">SEC Reporting</div>
+    <h1>The End of the 10-Q?</h1>
+    <p class="standfirst">What the SEC's semiannual reporting proposal would actually require, and why the cost savings may be narrower than the headline figure suggests.</p>
+  </div>
+
+  <h2><span class="num">01</span>The Proposal in Brief</h2>
+
+  <p class="lede">On May 5, 2026, the SEC proposed amendments under Release S7-2026-15 that would permit reporting companies to satisfy their interim reporting obligations by filing a single semiannual report on a new Form 10-S, in place of three quarterly reports on Form 10-Q. The comment period closed July 6, 2026. There is no final rule and no announced adoption date, and nothing about current reporting obligations has changed.</p>
+
+  <p>Three features of the proposal are frequently misunderstood.</p>
+
+  <p><strong>It is elective, not mandatory.</strong> Companies that do not elect the semiannual framework remain subject to the existing quarterly reporting regime. This is not a repeal of quarterly reporting; it is an option to opt out of it.</p>
+
+  <p><strong>The 10-K does not change.</strong> Annual reporting continues as it does today, and the annual audit is unaffected.</p>
+
+  <p><strong>Interim financial statements would still be reviewed.</strong> Proposed Form 10-S retains the requirement that semiannual financial statements be reviewed by an independent auditor. What the proposal eliminates is two of the three interim review engagements currently performed each year, not the concept of interim review.</p>
+
+  <p>Filing deadlines for Form 10-S would be 40 or 45 days after the end of the first semiannual period, depending on filer status. The proposal would also amend Regulation S-X and make conforming changes across numerous other rules and forms.</p>
+
+  <h2><span class="num">02</span>The Case For</h2>
+
+  <p><strong>Direct cost reduction.</strong> The SEC estimates that a company electing the new framework would incur direct annual compliance costs of approximately $132,000 to file one Form 10-S, against approximately $330,000 to file three Forms 10-Q. For a smaller reporting company, roughly $200,000 in annual savings is real money, and the argument extends beyond cash to management attention redirected toward operating priorities.</p>
+
+  <p><strong>Reduced short-termism.</strong> The proposing release acknowledges that frequent reporting can create pressure to manage toward near-term results. Supporters argue this pressure falls hardest on research-intensive businesses and emerging growth companies whose value creation does not show up in ninety-day increments.</p>
+
+  <p><strong>Optionality as market discipline.</strong> Because quarterly reporting remains available, companies whose investors value it have every incentive to keep providing it. On this view, the market rather than the regulator determines the appropriate cadence, while Form 8-K, Regulation FD, the antifraud provisions, and annual reporting all remain in place regardless of election.</p>
+
+  <h2><span class="num">03</span>The Case Against</h2>
+
+  <p>The comment record is unusually one-sided. The proposal drew more than 63,000 individually filed letters plus over 66,000 additional signatories to organized form-letter campaigns, one of the largest responses in SEC history. Approximately 99% of individually filed letters oppose it. Opposition came not only from individual investors but from trade and advocacy organizations, current and former public companies, investment professionals, and academic researchers.</p>
+
+  <h3>Information asymmetry</h3>
+  <p>A longer interval between mandatory reports lengthens the period during which insiders may hold material nonpublic information before the market receives it. The proposing release itself acknowledges that a longer reporting interval could increase both the incidence and the perception of trading on such information. Commenters argue that Form 8-K and Regulation FD address specified events and selective disclosure respectively, and were never designed to substitute for comprehensive periodic reporting.</p>
+
+  <h3>Delayed detection of accounting and control problems</h3>
+  <p>This is the objection most relevant to a controller or chief accounting officer. The proposing release concedes that less frequent interim reporting could delay identification of misstatements and control deficiencies, particularly at smaller companies with limited accounting resources. Audit practitioners commenting on the proposal argued that interim reviews serve a function beyond enabling the 10-Q: they surface issues early enough to be resolved before the annual audit. Removing two of three reviews removes two opportunities to catch a problem while it is still small.</p>
+
+  <h3>Market efficiency and cost of capital</h3>
+  <p>The SEC notes that less frequent reporting could cause prices to deviate from fundamental value for longer periods, increase jump volatility, impair liquidity, and raise the cost of capital for some issuers. Because information from one issuer informs the market's view of its peers, suppliers, and customers, reduced reporting by electing companies could diminish informational efficiency even for companies that continue reporting quarterly. Commenters also raised the prospect of wider dispersion in earnings estimates and reduced analyst coverage, particularly at smaller issuers.</p>
+
+  <h3>Comparability in a mixed environment</h3>
+  <p>If some companies in an industry file 10-S and others file 10-Q, peer comparison becomes harder for everyone in that industry.</p>
+
+  <p>Notably, the proposing release cites evidence from the United Kingdom and Singapore suggesting reduced reporting frequency has little effect on firms' investment decisions. Many commenters read the same jurisdictions differently, pointing to reduced trading volumes and diminished transparency as grounds for caution rather than reassurance.</p>
+
+  <h2><span class="num">04</span>The Objection That Matters Most Operationally</h2>
+
+  <div class="pull">
+    <p class="label">The central point</p>
+    <p>For many issuers, electing Form 10-S would eliminate the public filing of quarterly reports without eliminating the quarterly accounting close, the quarterly reporting package, or the quarterly lender submission.</p>
+  </div>
+
+  <p>The most practical criticism is that the proposal may not deliver the savings it promises, because most of the underlying work continues regardless of what gets filed.</p>
+
+  <p>Companies prepare quarterly financial information for internal management reporting, board oversight, and forecasting whether or not the SEC requires a filing. More consequentially, many companies are contractually obligated to deliver quarterly, or more frequent, financial information to lenders under credit agreements and other financing arrangements. Analysts, index providers, and rating agencies have built their processes around a quarterly cadence, and any company contemplating a capital markets transaction will still need quarterly information for diligence and marketing.</p>
+
+  <p>The savings would be real but narrower than the headline figure suggests, concentrated in filing preparation, XBRL tagging, review cycles, and two interim auditor engagements rather than in the close itself.</p>
+
+  <h2><span class="num">05</span>What Election Would Actually Entail</h2>
+
+  <p>Assume a final rule resembling the proposal. A company evaluating election would need to work through the following.</p>
+
+  <table>
+    <thead>
+      <tr><th style="width:31%">Workstream</th><th>What it requires</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Credit agreements and indentures</strong></td>
+        <td>Determine what financial information the company is contractually obligated to deliver and on what schedule. A quarterly delivery covenant is not waived by an SEC rule change. This is the first question, not the last, because it often determines whether election delivers anything at all.</td>
+      </tr>
+      <tr>
+        <td><strong>Insider trading policy</strong></td>
+        <td>Many companies structure trading windows around the quarterly reporting cycle. A semiannual cadence requires those policies and procedures to be rebuilt, and creates longer periods during which employees hold information without a scheduled release.</td>
+      </tr>
+      <tr>
+        <td><strong>Disclosure controls and 8-K posture</strong></td>
+        <td>With two fewer periodic filings, Form 8-K carries proportionally more of the disclosure burden. The disclosure committee's judgment about what is material and reportable becomes more consequential, and the supporting process needs to be strong enough to bear that weight.</td>
+      </tr>
+      <tr>
+        <td><strong>Internal control and close discipline</strong></td>
+        <td>Two fewer interim reviews means two fewer external checkpoints. Compensate internally through more rigorous quarterly close review, earlier account reconciliation discipline, and internal audit coverage timed to fill the gap. This is the most important area to get right, and the one most likely to be neglected because it produces no filing.</td>
+      </tr>
+      <tr>
+        <td><strong>Guidance and investor communication</strong></td>
+        <td>Election is a message to the market. Decide whether to continue voluntary quarterly releases, how to handle guidance across a six-month interval, and how to explain the decision to investors and analysts who may read it as a reduction in transparency.</td>
+      </tr>
+      <tr>
+        <td><strong>Peer positioning</strong></td>
+        <td>Election is more defensible if industry peers move as well, and harder if the company would be the only one in its comparable set to reduce cadence.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2><span class="num">06</span>What to Watch</h2>
+
+  <p>Four questions will shape any final rule. Whether anticipated savings justify reduced mandatory disclosure once contractual and market-driven obligations are accounted for. Whether Form 8-K and Regulation FD can carry the additional weight. Whether the framework should apply to all issuers or be limited to categories such as emerging growth companies or smaller reporting companies. And whether targeted alternatives, such as streamlining Form 10-Q, extending filing deadlines, or expanding reliance on Form 8-K, could achieve similar objectives while preserving the existing cadence.</p>
+
+  <p>The narrowing question is worth particular attention. A rule limited to smaller reporting companies and emerging growth companies would address the constituency with the strongest cost argument while leaving the large-cap disclosure environment intact, and it responds directly to the comment record without abandoning the rulemaking.</p>
+
+  <h2><span class="num">07</span>Our View</h2>
+
+  <p>The cost argument is strongest for smaller companies with limited accounting resources, and weakest for companies with quarterly lender covenants, active capital markets plans, or thin internal control infrastructure. Those are also, uncomfortably, the companies most likely to be attracted to the savings.</p>
+
+  <p>The control consideration deserves more weight than it is receiving in the public debate. Interim reviews are not merely a compliance artifact; they are a recurring external checkpoint on judgment and process. A company that elects semiannual reporting without deliberately strengthening its internal close and review discipline is not saving $200,000, it is deferring the discovery of problems to the annual audit, where they are more expensive and more visible to resolve.</p>
+
+  <p>For most companies, the right posture today is preparation rather than decision. Inventory your contractual reporting obligations, understand where your close process depends on the discipline that external review imposes, and be ready to evaluate election on facts rather than on the headline savings figure if and when a final rule arrives.</p>
+
+  <div class="colophon">
+    <div class="firm">State &amp; Lake, LLC</div>
+    <p style="margin:0">A boutique accounting and reporting advisory practice serving public and growth-stage companies. Technical accounting, SEC reporting and IPO readiness, SOX compliance, and strategic fractional support.</p>
+    <p class="disclaimer">This paper reflects the proposal as of September 2026. No final rule has been adopted, and current reporting obligations are unchanged. This material is informational and does not constitute accounting, legal, tax, or other professional advice. Readers should consult their own advisors with respect to their particular facts and circumstances. &copy; 2026 State &amp; Lake, LLC. All rights reserved.</p>
+  </div>
+
+</div>
+</body>
+</html>
