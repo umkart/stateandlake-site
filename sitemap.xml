@@ -1,22 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- EDIT ME: replace the domain below with the live domain, and update
-     lastmod when the content changes materially. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://stateandlakeadvisors.com/</loc>
-    <lastmod>2026-08-24</lastmod>
+    <loc>https://stateandlakeadvisory.com/</loc>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://stateandlakeadvisors.com/privacy.html</loc>
-    <lastmod>2026-08-24</lastmod>
+    <loc>https://stateandlakeadvisory.com/services.html</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stateandlakeadvisory.com/case-studies.html</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stateandlakeadvisory.com/about.html</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stateandlakeadvisory.com/insights.html</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stateandlakeadvisory.com/contact.html</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stateandlakeadvisory.com/insight-01-semiannual-reporting.html</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://stateandlakeadvisory.com/insight-02-ifrs-18.html</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://stateandlakeadvisory.com/insight-03-macro-conditions.html</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://stateandlakeadvisory.com/privacy.html</loc>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://stateandlakeadvisors.com/terms.html</loc>
-    <lastmod>2026-08-24</lastmod>
+    <loc>https://stateandlakeadvisory.com/terms.html</loc>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
