@@ -3,41 +3,71 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Page Not Found | State and Lake, LLC</title>
+<title>Page Not Found | State &amp; Lake Advisory, LLC</title>
+<meta name="description" content="The requested page could not be found.">
 <meta name="robots" content="noindex">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="stylesheet" href="styles.css">
+<style>
+/* Legal and utility pages — scoped here, no styles.css changes */
+.legal-body{max-width:760px;margin:0 auto;font-family:'Helvetica Neue',Arial,sans-serif;}
+.legal-body h2{font-size:1.2rem;color:var(--navy);margin:34px 0 10px;}
+.legal-body h2:first-child{margin-top:0;}
+.legal-body p{color:var(--muted);margin-bottom:14px;}
+.legal-body a{color:var(--rust);}
+</style>
 </head>
 <body>
 
 <header>
-  <nav aria-label="Primary">
-    <div class="logo-wrap">
-      <a href="index.html" aria-label="State and Lake, LLC home">
-        <div class="logo">State <span class="amp-and">and</span> Lake<span class="logo-llc">LLC</span></div>
-        <div class="logo-rule"></div>
-        <div class="logo-tagline">Accounting and Reporting Advisory</div>
-      </a>
-    </div>
-    <a href="index.html#contact" class="nav-cta">Discuss Your Accounting Issue</a>
+  <nav>
+    <a href="index.html" class="logo-wrap" aria-label="State &amp; Lake Advisory, LLC home">
+      <div class="logo">State <span class="amp-symbol">&amp;</span> Lake<span class="logo-llc">LLC</span></div>
+      <div class="logo-rule"></div>
+      <div class="logo-tagline">Accounting and Reporting Advisory</div>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="services.html">Services</a></li>
+      <li><a href="case-studies.html">Case Studies</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="insights.html">Insights</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
   </nav>
 </header>
 
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="eyebrow">404</div>
+    <h1>That page could not be found</h1>
+    <p>The link may be out of date, or the address may have been typed incorrectly.</p>
+  </div>
+</div>
+
 <main id="main">
-  <section>
-    <div class="page-narrow">
-      <p class="eyebrow">404</p>
-      <h1>That page could not be found</h1>
-      <p>The link may be out of date, or the address may have been typed incorrectly.</p>
-      <p><a href="index.html">Return to the home page</a>, or <a href="index.html#contact">get in touch</a> and we will point you to what you were looking for.</p>
-    </div>
-  </section>
+<section>
+  <div class="legal-body">
+
+        <p><a href="index.html">Return to the home page</a>, or <a href="contact.html">get in touch</a> and we will point you to what you were looking for.</p>
+  </div>
+</section>
 </main>
 
 <footer>
-  <p>&copy; <span id="year">2026</span> State and Lake, LLC. All rights reserved.</p>
+  <p class="footer-tagline">A boutique accounting and reporting advisory practice serving public and growth-stage companies</p>
+  <p class="footer-nav">
+    <a href="services.html">Services</a> &middot;
+    <a href="case-studies.html">Case Studies</a> &middot;
+    <a href="about.html">About</a> &middot;
+    <a href="insights.html">Insights</a> &middot;
+    <a href="contact.html">Contact</a>
+  </p>
+  <p>&copy; 2026 State &amp; Lake Advisory, LLC. All rights reserved. &nbsp;|&nbsp; <a href="privacy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="terms.html">Terms of Engagement</a></p>
 </footer>
 
-<script src="assets/js/main.js" defer></script>
+<script src="nav.js"></script>
 </body>
 </html>
